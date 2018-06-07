@@ -1,0 +1,11 @@
+﻿body {
+
+}
+
+#bltSearch li {
+    display: inline;
+    padding: 10px;
+    border: 5px inset #0094ff;
+    background-color: #4cff00;
+    margin: 5px;
+}

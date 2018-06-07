@@ -10,7 +10,7 @@
 namespace DataSources1 {
     
     
-    public partial class WebForm1 {
+    public partial class LunchOrder {
         
         /// <summary>
         /// form1 control.
@@ -22,57 +22,75 @@ namespace DataSources1 {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// ddlBinding control.
+        /// tbxName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlBinding;
+        protected global::System.Web.UI.WebControls.TextBox tbxName;
         
         /// <summary>
-        /// lblDDLBinding control.
+        /// lbxCity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDDLBinding;
+        protected global::System.Web.UI.WebControls.ListBox lbxCity;
         
         /// <summary>
-        /// lblBindingEvent control.
+        /// ddlGender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblBindingEvent;
+        protected global::System.Web.UI.WebControls.DropDownList ddlGender;
         
         /// <summary>
-        /// lbxTowns control.
+        /// cbxMeal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox lbxTowns;
+        protected global::System.Web.UI.WebControls.CheckBoxList cbxMeal;
         
         /// <summary>
-        /// lblTown control.
+        /// rbtnPayment control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTown;
+        protected global::System.Web.UI.WebControls.RadioButtonList rbtnPayment;
         
         /// <summary>
-        /// bltSearch control.
+        /// lblInfo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.BulletedList bltSearch;
+        protected global::System.Web.UI.WebControls.Label lblInfo;
+        
+        /// <summary>
+        /// btnOrder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnOrder;
+        
+        /// <summary>
+        /// lbxDetail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox lbxDetail;
     }
 }
