@@ -68,6 +68,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="About.aspx" />
     <Content Include="Error.html" />
     <Content Include="Global.asax" />
     <Content Include="images\erroricon-500x335.jpg" />
@@ -75,9 +76,17 @@
     <Content Include="Index.aspx" />
     <Content Include="UserControls\Footer.ascx" />
     <Content Include="UserControls\Header.ascx" />
+    <Content Include="UserControls\UserInfoBoxControl.ascx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -102,6 +111,13 @@
     </Compile>
     <Compile Include="UserControls\Header.ascx.designer.cs">
       <DependentUpon>Header.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserInfoBoxControl.ascx.cs">
+      <DependentUpon>UserInfoBoxControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserInfoBoxControl.ascx.designer.cs">
+      <DependentUpon>UserInfoBoxControl.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

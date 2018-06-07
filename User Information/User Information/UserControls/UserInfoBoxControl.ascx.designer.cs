@@ -7,11 +7,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace User_Information.UserControls
-{
-
-
-    public partial class UserInfoBoxControl
-    {
+namespace User_Information.UserControls {
+    
+    
+    public partial class UserInfoBoxControl {
     }
 }
