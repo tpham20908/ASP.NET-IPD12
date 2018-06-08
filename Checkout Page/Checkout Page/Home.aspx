@@ -12,7 +12,8 @@
     <form id="form1" runat="server">
         <div class="container">
             <h1>Check Out Page</h1>
-            <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
+            <asp:ValidationSummary ID="ValidationSummary1" runat="server" 
+                CssClass="validationSummary" HeaderText="Please correct these entries" />
             <br />
             <h2>Contact Information</h2>
             <table class="auto-style1">
@@ -23,8 +24,9 @@
                     </td>
                     <td class="auto-style4">
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
-                            ControlToValidate="tbxEmail" ErrorMessage="Must be a valid email address" 
+                            ControlToValidate="tbxEmail" ErrorMessage="Email address" 
                             ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" >
+                            Must be a valid email address
                         </asp:RegularExpressionValidator>
                     </td>
                 </tr>
@@ -35,9 +37,10 @@
                     </td>
                     <td class="auto-style4">
                         <asp:CompareValidator ID="CompareValidator1" runat="server" 
-                            ErrorMessage="Must match first email address"
+                            ErrorMessage="Email re-entry"
                             ControlToValidate="tbxReEmail" ControlToCompare="tbxEmail"
                             operator="Equal" Type="String" >
+                            Must match first email address
                         </asp:CompareValidator>
                     </td>
                 </tr>
@@ -47,10 +50,10 @@
                         <asp:TextBox ID="tbxFirstName" runat="server"></asp:TextBox>
                     </td>
                     <td class="auto-style4">
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                        <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
                             ErrorMessage="First Name is required"
                             controltovalidate="tbxFirstName" >
-                        </asp:RequiredFieldValidator>
+                        </asp:RequiredFieldValidator>--%>
                     </td>
                 </tr>
                 <tr>
@@ -59,10 +62,10 @@
                         <asp:TextBox ID="tbxLastName" runat="server"></asp:TextBox>
                     </td>
                     <td class="auto-style4">
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                        <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
                             ErrorMessage="Last Name is required"
                             controltovalidate="tbxLastName">
-                        </asp:RequiredFieldValidator>
+                        </asp:RequiredFieldValidator>--%>
                     </td>
                 </tr>
                 <tr>
@@ -72,9 +75,11 @@
                     </td>
                     <td class="auto-style4">
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
-                            ErrorMessage="Use this format: 123-456-7890"
+                            ErrorMessage="Phone number"
                             controltovalidate="tbxPhoneNumber"
-                            ValidationExpression="^\d{3}-\d{3}-\d{4}$"></asp:RegularExpressionValidator>
+                            ValidationExpression="^\d{3}-\d{3}-\d{4}$">
+                            Use this format: 123-456-7890
+                        </asp:RegularExpressionValidator>
                     </td>
                 </tr>
             </table>
@@ -86,9 +91,9 @@
                         <asp:TextBox ID="tbxBillingAddress" runat="server"></asp:TextBox>
                     </td>
                     <td class="auto-style4">
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                        <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
                             ErrorMessage="Address is required" 
-                            ControlToValidate="tbxBillingAddress"></asp:RequiredFieldValidator>
+                            ControlToValidate="tbxBillingAddress"></asp:RequiredFieldValidator>--%>
                     </td>
                 </tr>
                 <tr>
@@ -97,22 +102,25 @@
                         <asp:TextBox ID="tbxBillingCity" runat="server"></asp:TextBox>
                     </td>
                     <td class="auto-style4">
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                        <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
                             ErrorMessage="City is required"
                             ControlToValidate="tbxBillingCity">
-                        </asp:RequiredFieldValidator>
+                        </asp:RequiredFieldValidator>--%>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style2">State:</td>
                     <td class="auto-style3">
-                        <asp:DropDownList ID="ddlBillingState" runat="server" CssClass="dropdownList">
+                        <asp:DropDownList ID="ddlBillingState" runat="server" CssClass="dropdownList" 
+                            DataTextField="Name" DataValueField="ID" >
                         </asp:DropDownList>
                     </td>
                     <td class="auto-style4">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
-                            ErrorMessage="State is required"
-                            ControlToValidate="ddlBillingState"></asp:RequiredFieldValidator>
+                            ErrorMessage="Billing state"
+                            ControlToValidate="ddlBillingState">
+                            Required
+                        </asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -121,9 +129,9 @@
                         <asp:TextBox ID="tbxBillingZip" runat="server"></asp:TextBox>
                     </td>
                     <td class="auto-style4">
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
+                        <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
                             ErrorMessage="Zip Code is required"
-                            ControlToValidate="tbxBillingZip"></asp:RequiredFieldValidator>
+                            ControlToValidate="tbxBillingZip"></asp:RequiredFieldValidator>--%>
                     </td>
                 </tr>
             </table>
@@ -143,9 +151,9 @@
                         <asp:TextBox ID="tbxShippingAddress" runat="server"></asp:TextBox>
                     </td>
                     <td class="auto-style4">
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" 
+                        <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" 
                             ErrorMessage="Address is required"
-                            ControlToValidate="tbxShippingAddress"></asp:RequiredFieldValidator>
+                            ControlToValidate="tbxShippingAddress"></asp:RequiredFieldValidator>--%>
                     </td>
                 </tr>
                 <tr>
@@ -154,21 +162,21 @@
                         <asp:TextBox ID="tbxShippingCity" runat="server"></asp:TextBox>
                     </td>
                     <td class="auto-style4">
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" 
+                        <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" 
                             ErrorMessage="City is required"
-                            ControlToValidate="tbxShippingCity"></asp:RequiredFieldValidator>
+                            ControlToValidate="tbxShippingCity"></asp:RequiredFieldValidator>--%>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style2">State:</td>
                     <td class="auto-style3">
-                        <asp:DropDownList ID="ddlShippingState" runat="server" CssClass="dropdownList">
+                        <asp:DropDownList ID="ddlShippingState" runat="server" CssClass="dropdownList" DataTextField="Name" DataValueField="ID">
                         </asp:DropDownList>
                     </td>
                     <td class="auto-style4">
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" 
+                        <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" 
                             ErrorMessage="State is required"
-                            ControlToValidate="ddlShippingState"></asp:RequiredFieldValidator>
+                            ControlToValidate="ddlShippingState"></asp:RequiredFieldValidator>--%>
                     </td>
                 </tr>
                 <tr>
@@ -177,15 +185,15 @@
                         <asp:TextBox ID="tbxShippingZip" runat="server"></asp:TextBox>
                     </td>
                     <td class="auto-style4">
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" 
+                        <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" 
                             ErrorMessage="Zip is required"
-                            ControlToValidate="tbxShippingZip"></asp:RequiredFieldValidator>
+                            ControlToValidate="tbxShippingZip"></asp:RequiredFieldValidator>--%>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style2">&nbsp;</td>
                     <td class="btn">
-                        <asp:Button ID="btnCheckout" runat="server" Text="Check Out" />
+                        <asp:Button ID="btnCheckout" runat="server" Text="Check Out" OnClick="btnCheckout_Click" />
                     </td>
                     <td>&nbsp;</td>
                 </tr>
