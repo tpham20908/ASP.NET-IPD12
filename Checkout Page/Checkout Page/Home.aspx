@@ -25,7 +25,7 @@
                     <td class="auto-style4">
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
                             ControlToValidate="tbxEmail" ErrorMessage="Email address" 
-                            ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" >
+                            ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">
                             Must be a valid email address
                         </asp:RegularExpressionValidator>
                     </td>
@@ -113,12 +113,18 @@
                     <td class="auto-style3">
                         <asp:DropDownList ID="ddlBillingState" runat="server" CssClass="dropdownList" 
                             DataTextField="Name" DataValueField="ID" >
+                            <asp:ListItem></asp:ListItem>
+                            <asp:ListItem>WA</asp:ListItem>
+                            <asp:ListItem>VA</asp:ListItem>
+                            <asp:ListItem>MI</asp:ListItem>
+                            <asp:ListItem>LA</asp:ListItem>
+                            <asp:ListItem>FL</asp:ListItem>
                         </asp:DropDownList>
                     </td>
                     <td class="auto-style4">
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
-                            ErrorMessage="Billing state"
-                            ControlToValidate="ddlBillingState">
+                            ErrorMessage="Billing state" Display="Dynamic" 
+                            ControlToValidate="ddlBillingState" InitialValue="">
                             Required
                         </asp:RequiredFieldValidator>
                     </td>

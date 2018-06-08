@@ -40,31 +40,26 @@ namespace Checkout_Page
 
         private void loadingStates()
         {
-            var States = new[]
-            {
-                new { ID = 0, Name = ""},
-                new { ID = 1, Name = "WA"},
-                new { ID = 2, Name = "MI"},
-                new { ID = 3, Name = "CA"},
-                new { ID = 4, Name = "WC"},
-                new { ID = 5, Name = "LA"},
-                new { ID = 6, Name = "VA"}
-            };
+            //var States = new[]
+            //{
+            //    new { ID = 1, Name = "WA"},
+            //    new { ID = 2, Name = "MI"},
+            //    new { ID = 3, Name = "CA"},
+            //    new { ID = 4, Name = "WC"},
+            //    new { ID = 5, Name = "LA"},
+            //    new { ID = 6, Name = "VA"}
+            //};
 
-            ddlBillingState.DataSource = States;
-            ddlBillingState.DataBind();
-            ddlBillingState.SelectedIndex = 0;
+            //ddlBillingState.DataSource = States;
+            //ddlBillingState.DataBind();
 
-            ddlShippingState.DataSource = States;
-            ddlShippingState.DataBind();
+            //ddlShippingState.DataSource = States;
+            //ddlShippingState.DataBind();
         }
 
         protected void btnCheckout_Click(object sender, EventArgs e)
         {
-            if (ddlBillingState.SelectedIndex == 0)
-            {
-                lblSummary.Text = "Empty";
-            }
+            
         }
     }
 }
