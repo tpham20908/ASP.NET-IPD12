@@ -2,6 +2,12 @@
     text-align:center;
 }
 
+h5 {
+    margin: 0;
+    padding: 0;
+    text-decoration: underline;
+}
+
 input, select {
     width: 100%;
     margin: 5px;
@@ -15,8 +21,9 @@ input#ckbxSameAddress {
     height: 12px;
 }
 
-label {
-    padding-bottom: 12px;
+.dropdownList {
+    height: 100%;
+    padding: 0;
 }
 
 .container {
@@ -67,4 +74,18 @@ label {
 
 .validationSummary {
     color: red;
+    border: 1px solid #aaa;
+    padding: 15px;
+    border-radius: 3px;
+}
+
+.lblOrderDetail {
+    border: 3px outset #0026ff;
+    background-color: rgba(188, 199, 122, 0.1);
+    word-spacing: 3px;
+    line-height: 1.3em;
+    font-style:unset;
+    font-size: 18px;
+    color: #305e97;
+    padding: 12px;
 }
