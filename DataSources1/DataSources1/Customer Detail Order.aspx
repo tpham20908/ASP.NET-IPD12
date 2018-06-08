@@ -16,8 +16,8 @@
                 <asp:SqlDataSource ID="SqlCustomerFields" runat="server" 
                     ConnectionString="<%$ ConnectionStrings:NORTHWNDConnectionString2 %>" 
                     SelectCommand="SELECT COLUMN_NAME
-FROM Northwnd.INFORMATION_SCHEMA.COLUMNS
-WHERE TABLE_NAME = N'Customers'"></asp:SqlDataSource>
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME = 'Customers'"></asp:SqlDataSource>
             </p>
             
             <p>
