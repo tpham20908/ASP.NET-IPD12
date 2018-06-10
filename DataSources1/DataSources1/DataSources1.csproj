@@ -77,6 +77,7 @@
   <ItemGroup>
     <Content Include="CSS\Style.css" />
     <Content Include="Customer Detail Order.aspx" />
+    <Content Include="CustomerDetailOrder_Home.aspx" />
     <Content Include="CustomersByCountry_Home.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Customer by Countries.aspx" />
@@ -90,6 +91,13 @@
     </Compile>
     <Compile Include="Customer Detail Order.aspx.designer.cs">
       <DependentUpon>Customer Detail Order.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerDetailOrder_Home.aspx.cs">
+      <DependentUpon>CustomerDetailOrder_Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerDetailOrder_Home.aspx.designer.cs">
+      <DependentUpon>CustomerDetailOrder_Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="CustomersByCountry_Home.aspx.cs">
       <DependentUpon>CustomersByCountry_Home.aspx</DependentUpon>
