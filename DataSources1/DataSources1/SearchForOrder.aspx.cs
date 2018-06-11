@@ -35,13 +35,16 @@ namespace DataSources1
                 dtlResult.DataBind();
 
                 // get either customer or shipper
-                string optionChosen = getOption();
 
-                if (optionChosen == "Customer")
+
+
+                int optionChosen = getOption();
+
+                if (optionChosen == 1)
                 {
                     string option = (string)reader["CustomerID"];
-                    string sql2 = "SELECT * FROM Customers WHERE CustomerID = '" + option + "'";
-                    cmd = new SqlCommand(sql2, con);
+                    sql = "SELECT * FROM Customers WHERE CustomerID = '" + option + "'";
+                    cmd = new SqlCommand(sql, con);
                     reader = cmd.ExecuteReader();
                     if (reader.Read())
                     {
@@ -71,12 +74,12 @@ namespace DataSources1
             }
         }
            
-        public string getOption()
+        public int getOption()
         {
             if (ddlOptions.SelectedValue == "Customer")
-                return "CustomerID";
+                return 1;
             else
-                return "ShipVia";
+                return 2;
         }
     }
 }
