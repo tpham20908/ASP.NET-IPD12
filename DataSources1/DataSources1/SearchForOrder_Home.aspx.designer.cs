@@ -10,7 +10,7 @@
 namespace DataSources1 {
     
     
-    public partial class SearchForOrder {
+    public partial class SearchForOrder_Home {
         
         /// <summary>
         /// form1 control.
@@ -22,13 +22,13 @@ namespace DataSources1 {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// tbxOrderID control.
+        /// tbxOrderId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbxOrderID;
+        protected global::System.Web.UI.WebControls.TextBox tbxOrderId;
         
         /// <summary>
         /// ddlOptions control.
@@ -49,30 +49,21 @@ namespace DataSources1 {
         protected global::System.Web.UI.WebControls.Button btnSearch;
         
         /// <summary>
-        /// dtlResult control.
+        /// lbxOption control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DetailsView dtlResult;
+        protected global::System.Web.UI.WebControls.ListBox lbxOption;
         
         /// <summary>
-        /// lbxResult control.
+        /// dvResult control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox lbxResult;
-        
-        /// <summary>
-        /// lblTest control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTest;
+        protected global::System.Web.UI.WebControls.DetailsView dvResult;
     }
 }

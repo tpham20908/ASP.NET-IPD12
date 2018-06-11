@@ -82,6 +82,7 @@
     <Content Include="Global.asax" />
     <Content Include="Customer by Countries.aspx" />
     <Content Include="SearchForOrder.aspx" />
+    <Content Include="SearchForOrder_Home.aspx" />
     <Content Include="Shippers.aspx" />
     <Content Include="SuppliersSearch.aspx" />
     <Content Include="Web.config">
@@ -128,6 +129,13 @@
     </Compile>
     <Compile Include="SearchForOrder.aspx.designer.cs">
       <DependentUpon>SearchForOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchForOrder_Home.aspx.cs">
+      <DependentUpon>SearchForOrder_Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchForOrder_Home.aspx.designer.cs">
+      <DependentUpon>SearchForOrder_Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="Shippers.aspx.cs">
       <DependentUpon>Shippers.aspx</DependentUpon>

@@ -35,14 +35,13 @@ namespace DataSources1
                 dtlResult.DataBind();
 
                 // get either customer or shipper
-
-
-
+                
                 int optionChosen = getOption();
 
                 if (optionChosen == 1)
                 {
                     string option = (string)reader["CustomerID"];
+                    reader.Close();
                     sql = "SELECT * FROM Customers WHERE CustomerID = '" + option + "'";
                     cmd = new SqlCommand(sql, con);
                     reader = cmd.ExecuteReader();
@@ -59,13 +58,13 @@ namespace DataSources1
                     
                 else
                 {
-                    string option = (string)reader["ShipName"];
-                    string sql2 = "SELECT * FROM Customers WHERE CustomerID = " + option;
+                    //string option = (string)reader["ShipName"];
+                    //string sql2 = "SELECT * FROM Customers WHERE CustomerID = " + option;
                 }
             }
             catch (Exception ex)
             {
-                throw;
+                
             }
             finally
             {

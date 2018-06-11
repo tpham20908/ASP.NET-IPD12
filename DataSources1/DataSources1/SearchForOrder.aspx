@@ -49,6 +49,7 @@
                 
             </table>
         </div>
+        <asp:Label ID="lblTest" runat="server" ></asp:Label>
     </form>
 </body>
 </html>
