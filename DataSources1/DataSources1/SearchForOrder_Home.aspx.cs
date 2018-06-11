@@ -30,8 +30,10 @@ namespace DataSources1
                 SqlCommand cmd = new SqlCommand(sql, con);
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
+
                 dvResult.DataSource = reader;
                 dvResult.DataBind();
+                reader.Close();
 
                 switch (ddlOptions.SelectedValue)
                 {
@@ -45,7 +47,6 @@ namespace DataSources1
                         break;
                 }
 
-                reader.Close();
                 lbxOption.Items.Clear();
                 cmd = new SqlCommand(sql, con);
                 reader = cmd.ExecuteReader();
@@ -54,6 +55,7 @@ namespace DataSources1
                 {
                     lbxOption.Items.Add(reader[i].ToString());
                 }
+                reader.Close();
             }
             catch (Exception)
             {
