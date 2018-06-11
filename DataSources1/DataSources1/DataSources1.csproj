@@ -81,7 +81,12 @@
     <Content Include="CustomersByCountry_Home.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Customer by Countries.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="SearchForOrder.aspx" />
+    <Content Include="Shippers.aspx" />
+    <Content Include="SuppliersSearch.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -117,6 +122,27 @@
       <DependentUpon>Customer by Countries.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchForOrder.aspx.cs">
+      <DependentUpon>SearchForOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchForOrder.aspx.designer.cs">
+      <DependentUpon>SearchForOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shippers.aspx.cs">
+      <DependentUpon>Shippers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shippers.aspx.designer.cs">
+      <DependentUpon>Shippers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SuppliersSearch.aspx.cs">
+      <DependentUpon>SuppliersSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SuppliersSearch.aspx.designer.cs">
+      <DependentUpon>SuppliersSearch.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
