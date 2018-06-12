@@ -81,6 +81,7 @@
     <Content Include="CustomersByCountry_Home.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Customer by Countries.aspx" />
+    <Content Include="LinqPractice.aspx" />
     <Content Include="SearchForOrder.aspx" />
     <Content Include="SearchForOrder_Home.aspx" />
     <Content Include="Shippers.aspx" />
@@ -88,7 +89,7 @@
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="WebForm1.aspx" />
+    <Content Include="LINQ_Practice.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Customer Detail Order.aspx.cs">
@@ -122,6 +123,18 @@
     <Compile Include="Customer by Countries.aspx.designer.cs">
       <DependentUpon>Customer by Countries.aspx</DependentUpon>
     </Compile>
+    <Compile Include="LinqPractice.aspx.cs">
+      <DependentUpon>LinqPractice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LinqPractice.aspx.designer.cs">
+      <DependentUpon>LinqPractice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Course.cs" />
+    <Compile Include="Models\Room.cs" />
+    <Compile Include="Models\Schedule.cs" />
+    <Compile Include="Models\Staff.cs" />
+    <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SearchForOrder.aspx.cs">
       <DependentUpon>SearchForOrder.aspx</DependentUpon>
@@ -151,17 +164,16 @@
     <Compile Include="SuppliersSearch.aspx.designer.cs">
       <DependentUpon>SuppliersSearch.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="LINQ_Practice.aspx.cs">
+      <DependentUpon>LINQ_Practice.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="LINQ_Practice.aspx.designer.cs">
+      <DependentUpon>LINQ_Practice.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

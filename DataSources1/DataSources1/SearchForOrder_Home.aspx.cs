@@ -12,7 +12,7 @@ namespace DataSources1
     public partial class SearchForOrder_Home : System.Web.UI.Page
     {
         private string ConStr = ConfigurationManager
-            .ConnectionStrings["NORTHWNDConnectionString"]
+            .ConnectionStrings["NORTHWNDConnectionString2"]
             .ConnectionString;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -53,7 +53,7 @@ namespace DataSources1
                 reader.Read();
                 for (int i = 0; i < reader.FieldCount; i++)
                 {
-                    lbxOption.Items.Add(reader[i].ToString());
+                    lbxOption.Items.Add(reader.GetName(i) + "." + reader[i].ToString());
                 }
                 reader.Close();
             }
@@ -65,7 +65,23 @@ namespace DataSources1
             {
                 con.Close();
             }
-            
+        }
+
+        private string GetOption()
+        {
+            string outStr = "";
+            for (int i = 0; i < dvResult.Rows.Count; i++)
+            {
+                if (dvResult.Rows[i].Cells[0].Text == "Customer")
+                {
+                    outStr = "SELECT * FROM Customers WHERE CustomerID = '"
+                        + dvResult.Rows[i].Cells[1].Text + "'";
+                }
+                else
+                    outStr = "SELECT * FROM Shippers WHERE ShipperID = '"
+                        + dvResult.Rows[i].Cells[1].Text + "'";
+            }
+            return outStr;
         }
     }
 }
