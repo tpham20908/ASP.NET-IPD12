@@ -72,6 +72,10 @@
     <Content Include="Global.asax" />
     <Content Include="Index.aspx" />
     <Content Include="Orders.aspx" />
+    <Content Include="OrderDetail_Master.aspx" />
+    <Content Include="Scripts\demo.js" />
+    <Content Include="Scripts\Sites.js" />
+    <Content Include="Style.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -98,7 +102,28 @@
     <Compile Include="Orders.aspx.designer.cs">
       <DependentUpon>Orders.aspx</DependentUpon>
     </Compile>
+    <Compile Include="OrderDetail_Master.aspx.cs">
+      <DependentUpon>OrderDetail_Master.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrderDetail_Master.aspx.designer.cs">
+      <DependentUpon>OrderDetail_Master.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Print.Master.cs">
+      <DependentUpon>Print.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Print.Master.designer.cs">
+      <DependentUpon>Print.Master</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SiteMaster.Master.cs">
+      <DependentUpon>SiteMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SiteMaster.Master.designer.cs">
+      <DependentUpon>SiteMaster.Master</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\BAL_Northwind.dbml">
@@ -110,6 +135,8 @@
       <DependentUpon>BAL_Northwind.dbml</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <Content Include="SiteMaster.Master" />
+    <Content Include="Print.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -61,20 +61,27 @@ namespace ObjectDS.BAL
         {
             using (var context = new BAL_NorthwindDataContext())
             {
-                List<Product> products = new List<Product>();
+                List<Product> products = (from p in context.Products
+                                          join od in context.Order_Details
+                                          on p.ProductID equals od.ProductID
+                                          where od.OrderID == id
+                                          select p).ToList();
+                return products;
+            }
+        }
 
-                List<int> productIds = (from od in context.Order_Details
-                                                   where od.OrderID == id
-                                                   select od.ProductID).ToList();
-
-                foreach (int prodId in productIds)
-                {
-                    List<Product> prods = (from p in context.Products
-                                 where p.ProductID == prodId
-                                 select p).ToList();
-                    products.AddRange(prods);
-                }
-
+        //Select Product ID, Product Name, Price, Quantity & Discount
+        public object GetCustomedProducts(int id)
+        {
+            using (var context = new BAL_NorthwindDataContext())
+            {
+                var products = (from p in context.Products
+                                          join od in context.Order_Details
+                                          on p.ProductID equals od.ProductID
+                                          where od.OrderID == id
+                                          select new {
+                                              p.ProductID, p.ProductName, od.UnitPrice, od.Quantity, od.Discount
+                                          }).ToList();
                 return products;
             }
         }

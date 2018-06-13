@@ -1,0 +1,31 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteMaster.master.cs" Inherits="ObjectDS.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Northwind Application</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script src="Scripts/Sites.js"></script>
+</head>
+<body>
+    <%--Header--%>
+    <div style="float:left; width:50%; text-align:left; font-size:18px; font-weight:bold;">
+        <h2>Northwind web application</h2>
+    </div>
+    <div style="">
+
+    </div>
+    <%--Main--%>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="mainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+
+    <%--Footer--%>
+    &copy; 2018 | Contact Info: +1 800 123-4567
+</body>
+</html>
