@@ -8,7 +8,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{C38655BA-2F07-477F-AE63-0B454D70D44E}</ProjectGuid>
+    <ProjectGuid>{C7E95C0C-D01B-453C-9DEA-965FE98ABFAC}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -70,81 +70,38 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Index.aspx" />
-    <Content Include="Orders.aspx" />
-    <Content Include="OrderDetail_Master.aspx" />
-    <Content Include="OrderSearch_Home.aspx" />
-    <Content Include="Scripts\demo.js" />
-    <Content Include="Scripts\Sites.js" />
-    <Content Include="Style.css" />
+    <Content Include="OrderSearch.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BAL\BAL_Countries.cs" />
+    <Compile Include="BAL\BAL_OrderSearch.cs" />
+    <Compile Include="Data\NorthwindDB.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NorthwindDB.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Data\BAL_Northwind.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BAL_Northwind.dbml</DependentUpon>
-    </Compile>
-    <Compile Include="Index.aspx.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
+    <Compile Include="OrderSearch.aspx.cs">
+      <DependentUpon>OrderSearch.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Index.aspx.designer.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Orders.aspx.cs">
-      <DependentUpon>Orders.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Orders.aspx.designer.cs">
-      <DependentUpon>Orders.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="OrderDetail_Master.aspx.cs">
-      <DependentUpon>OrderDetail_Master.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="OrderDetail_Master.aspx.designer.cs">
-      <DependentUpon>OrderDetail_Master.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="OrderSearch_Home.aspx.cs">
-      <DependentUpon>OrderSearch_Home.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="OrderSearch_Home.aspx.designer.cs">
-      <DependentUpon>OrderSearch_Home.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Print.Master.cs">
-      <DependentUpon>Print.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Print.Master.designer.cs">
-      <DependentUpon>Print.Master</DependentUpon>
+    <Compile Include="OrderSearch.aspx.designer.cs">
+      <DependentUpon>OrderSearch.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SiteMaster.Master.cs">
-      <DependentUpon>SiteMaster.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="SiteMaster.Master.designer.cs">
-      <DependentUpon>SiteMaster.Master</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Data\BAL_Northwind.dbml">
+    <Content Include="Data\NorthwindDB.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>BAL_Northwind.designer.cs</LastGenOutput>
+      <LastGenOutput>NorthwindDB.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
-    <None Include="Data\BAL_Northwind.dbml.layout">
-      <DependentUpon>BAL_Northwind.dbml</DependentUpon>
+    <None Include="Data\NorthwindDB.dbml.layout">
+      <DependentUpon>NorthwindDB.dbml</DependentUpon>
     </None>
     <None Include="packages.config" />
-    <Content Include="SiteMaster.Master" />
-    <Content Include="Print.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -172,9 +129,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>50121</DevelopmentServerPort>
+          <DevelopmentServerPort>56984</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:50121/</IISUrl>
+          <IISUrl>http://localhost:56984/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
