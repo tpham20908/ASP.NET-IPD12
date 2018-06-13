@@ -96,7 +96,8 @@
                 </asp:ObjectDataSource>
                 <asp:ObjectDataSource ID="DSOrderDetail" runat="server"></asp:ObjectDataSource>
             </p>
-            <h3>Custom Products:</h3>
+            <h3>Customed Products:</h3>
+            <asp:GridView ID="GridView1" runat="server"></asp:GridView>
         </div>
     </form>
 </body>
