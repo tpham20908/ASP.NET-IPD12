@@ -60,16 +60,11 @@
                             <asp:ControlParameter ControlID="gvCustomers" Name="id" PropertyName="SelectedValue" Type="Int32" />
                         </SelectParameters>
                     </asp:ObjectDataSource>
-                    <div class="row mt-3">
-                        <div class="col-sm-6 text-center">
-                            <asp:Button ID="btnUpdateCustomer" runat="server" Text="Update" CssClass="bg-warning" />
-                        </div>
-                        <div class="col-sm-6 text-center">
-                            <asp:Button ID="btnRentMedia" runat="server" Text="Rent Media" CssClass="bg-info" OnClick="btnRentMedia_Click" />
-                        </div>
-                    </div>
+                    <asp:Button ID="btnRentMedia" runat="server" Text="Rent Media" CssClass="bg-info mt-3"
+                            Width="100%" ForeColor="White" OnClick="btnRentMedia_Click" />
                 </div>
             </div>
         </div>
     </div>
+
 </asp:Content>

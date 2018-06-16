@@ -12,13 +12,11 @@ namespace VideoRentalStore
         protected void Page_Load(object sender, EventArgs e)
         {
             btnRentMedia.Visible = false;
-            btnUpdateCustomer.Visible = false;
         }
 
         protected void gvCustomers_SelectedIndexChanged(object sender, EventArgs e)
         {
             btnRentMedia.Visible = true;
-            btnUpdateCustomer.Visible = true;
         }
 
         protected void btnRentMedia_Click(object sender, EventArgs e)
