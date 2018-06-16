@@ -2,3 +2,7 @@
     width: 240px;
     height: 148px;
 }
+
+label {
+    margin-left: 8px;
+}

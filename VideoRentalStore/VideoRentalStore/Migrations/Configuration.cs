@@ -7,7 +7,7 @@ namespace VideoRentalStore.Migrations
     using System.Linq;
     using VideoRentalStore.Models;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<VideoRentalStore.Models.VideoRentalStoreDBContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<VideoRentalStoreDBContext>
     {
         public Configuration()
         {

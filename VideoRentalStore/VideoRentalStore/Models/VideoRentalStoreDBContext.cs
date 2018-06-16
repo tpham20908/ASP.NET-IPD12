@@ -8,7 +8,7 @@ namespace VideoRentalStore.Models
 {
     public class VideoRentalStoreDBContext : DbContext
     {
-        public VideoRentalStoreDBContext(DbContextOptions) : base() { }
+        public VideoRentalStoreDBContext() : base() {}
 
         public DbSet<Customer> Customers { get; set; }
         public DbSet<RentalRecord> RentalRecords { get; set; }
