@@ -20,11 +20,11 @@ namespace VideoRentalStore.Migrations
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
-            /*
+            
             context.Customers.RemoveRange(context.Customers);
             context.RentalRecords.RemoveRange(context.RentalRecords);
             context.Medias.RemoveRange(context.Medias);
-            */
+            
             IList<Customer> customers = new List<Customer>();
             // add customer #1
             customers.Add(new Customer() {
@@ -41,19 +41,19 @@ namespace VideoRentalStore.Migrations
                         {
                             new Media()
                             {
-                                Title = "Movie1",
+                                Title = "Gone with the wind",
                                 Type = "Movie",
                                 ProductionYear = 1988
                             },
                             new Media()
                             {
-                                Title = "Movie2",
+                                Title = "Departed",
                                 Type = "Movie",
                                 ProductionYear = 2000
                             },
                             new Media()
                             {
-                                Title = "Music1",
+                                Title = "Pride",
                                 Type = "Music",
                                 ProductionYear = 1998
                             }
@@ -66,19 +66,19 @@ namespace VideoRentalStore.Migrations
                         {
                             new Media()
                             {
-                                Title = "Movie1001",
+                                Title = "Jurasic Park",
                                 Type = "Movie",
                                 ProductionYear = 1988
                             },
                             new Media()
                             {
-                                Title = "Movie1002",
+                                Title = "Going home",
                                 Type = "Movie",
                                 ProductionYear = 2000
                             },
                             new Media()
                             {
-                                Title = "Movie1003",
+                                Title = "Batman",
                                 Type = "Movie",
                                 ProductionYear = 1998
                             }
@@ -103,19 +103,19 @@ namespace VideoRentalStore.Migrations
                         {
                             new Media()
                             {
-                                Title = "Show1001",
+                                Title = "Montreal Fashion Show",
                                 Type = "TV Show",
                                 ProductionYear = 1976
                             },
                             new Media()
                             {
-                                Title = "Movie1005",
+                                Title = "Spider Man",
                                 Type = "Movie",
                                 ProductionYear = 2002
                             },
                             new Media()
                             {
-                                Title = "Music1002",
+                                Title = "Somebody that I used to know",
                                 Type = "Music",
                                 ProductionYear = 2005
                             }
@@ -128,19 +128,19 @@ namespace VideoRentalStore.Migrations
                         {
                             new Media()
                             {
-                                Title = "Movie1006",
+                                Title = "Super Man",
                                 Type = "Movie",
                                 ProductionYear = 1988
                             },
                             new Media()
                             {
-                                Title = "DocumentationTitle1001",
+                                Title = "History of Canada",
                                 Type = "Documentation",
                                 ProductionYear = 2011
                             },
                             new Media()
                             {
-                                Title = "MusicTitle1003",
+                                Title = "Drive by train",
                                 Type = "Music",
                                 ProductionYear = 1999
                             }
@@ -153,13 +153,13 @@ namespace VideoRentalStore.Migrations
                         {
                             new Media()
                             {
-                                Title = "DocumentationTitle1002",
+                                Title = "Quebec today",
                                 Type = "Documentation",
                                 ProductionYear = 2013
                             },
                             new Media()
                             {
-                                Title = "MusicTitle1003",
+                                Title = "Beattle",
                                 Type = "CD",
                                 ProductionYear = 1965
                             }

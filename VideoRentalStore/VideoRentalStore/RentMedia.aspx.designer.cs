@@ -31,6 +31,24 @@ namespace VideoRentalStore {
         protected global::System.Web.UI.WebControls.Button btnSearchTitle;
         
         /// <summary>
+        /// gvRentedMedias control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvRentedMedias;
+        
+        /// <summary>
+        /// ODSMediaListByCustomerId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource ODSMediaListByCustomerId;
+        
+        /// <summary>
         /// cblTitles control.
         /// </summary>
         /// <remarks>
@@ -65,14 +83,5 @@ namespace VideoRentalStore {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblAnnouncement;
-        
-        /// <summary>
-        /// gvRentedMedias control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvRentedMedias;
     }
 }

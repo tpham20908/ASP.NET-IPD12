@@ -21,19 +21,32 @@ namespace VideoRentalStore.Models
             return GetCustomers().FirstOrDefault(c => c.ID == id);
         }
 
-        public List<RentalRecord> GetRecordsByCustomerId (int customerId)
+        // update customer
+        public void UpdateCustomer(int id, string firstName, string lastName, string address, string phoneNumber)
         {
-            List<RentalRecord> records = (from r in _context.RentalRecords
-                                          where r.customer.ID == customerId
-                                          select r).ToList();
-            return records;
+            Customer c = GetCustomerById(id);
+
+            if (!String.IsNullOrEmpty(firstName))
+                c.FirstName = firstName;
+            if (!String.IsNullOrEmpty(lastName))
+                c.LastName = lastName;
+            if (!String.IsNullOrEmpty(address))
+                c.Address = address;
+            if (!String.IsNullOrEmpty(phoneNumber))
+                c.PhoneNumber = phoneNumber;
+
+            _context.SaveChanges();
         }
 
         public List<Media> GetMediaListByCustomerId (int customerId)
         {
+            //int custId = int.Parse(customerId);
+
             List<Media> medias = new List<Media>();
 
-            List<RentalRecord> rentalRecords = GetRecordsByCustomerId(customerId);
+            List<RentalRecord> rentalRecords = (from r in _context.RentalRecords
+                                                where r.customer.ID == customerId
+                                                select r).ToList();
 
             if (rentalRecords != null)
             {

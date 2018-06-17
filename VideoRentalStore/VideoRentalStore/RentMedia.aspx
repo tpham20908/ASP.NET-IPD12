@@ -15,13 +15,40 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-9">
-                            <asp:TextBox ID="tbxSearchTitle" runat="server" Width="100%"></asp:TextBox>
+                            <asp:TextBox ID="tbxSearchTitle" runat="server" Width="100%" CssClass="pl-1"></asp:TextBox>
                         </div>
                         <div class="col-sm-3">
                             <asp:Button ID="btnSearchTitle" runat="server" Text="Search" Width="100%"
                                 CssClass="bg-info" ForeColor="White" OnClick="btnSearchTitle_Click" />
                         </div>
                     </div>
+
+                    <br />
+                    <hr />
+
+                    <h4 class="card-title">Media rented:</h4>
+                    <asp:GridView ID="gvRentedMedias" runat="server" Width="100%" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" AllowPaging="True" AutoGenerateColumns="False" DataSourceID="ODSMediaListByCustomerId">
+                        <Columns>
+                            <asp:BoundField DataField="ID" HeaderText="ID" SortExpression="ID" />
+                            <asp:BoundField DataField="Title" HeaderText="Title" SortExpression="Title" />
+                            <asp:BoundField DataField="Type" HeaderText="Type" SortExpression="Type" />
+                            <asp:BoundField DataField="ProductionYear" HeaderText="ProductionYear" SortExpression="ProductionYear" />
+                        </Columns>
+                        <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
+                        <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
+                        <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
+                        <RowStyle BackColor="White" ForeColor="#330099" />
+                        <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
+                        <SortedAscendingCellStyle BackColor="#FEFCEB" />
+                        <SortedAscendingHeaderStyle BackColor="#AF0101" />
+                        <SortedDescendingCellStyle BackColor="#F6F0C0" />
+                        <SortedDescendingHeaderStyle BackColor="#7E0000" />
+                    </asp:GridView>
+                    <asp:ObjectDataSource ID="ODSMediaListByCustomerId" runat="server" SelectMethod="GetMediaListByCustomerId" TypeName="VideoRentalStore.Models.VideoRentalStoreRepository">
+                        <SelectParameters>
+                            <asp:QueryStringParameter DefaultValue="null" Name="customerId" QueryStringField="CustomerId" Type="Int32" />
+                        </SelectParameters>
+                    </asp:ObjectDataSource>
                 </div>
             </div>
         </div>
@@ -51,22 +78,5 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="card">
-                <asp:GridView ID="gvRentedMedias" runat="server" Width="100%" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4">
-                    <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
-                    <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
-                    <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
-                    <RowStyle BackColor="White" ForeColor="#330099" />
-                    <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
-                    <SortedAscendingCellStyle BackColor="#FEFCEB" />
-                    <SortedAscendingHeaderStyle BackColor="#AF0101" />
-                    <SortedDescendingCellStyle BackColor="#F6F0C0" />
-                    <SortedDescendingHeaderStyle BackColor="#7E0000" />
-                </asp:GridView>
-            </div>
-        </div>
-    </div>
-
+    
 </asp:Content>

@@ -14,10 +14,10 @@ namespace VideoRentalStore
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            int custId = int.Parse(Request.QueryString["CustomerId"]);
-            List<Media> medias = v.GetMediaListByCustomerId(custId);
-            gvRentedMedias.DataSource = medias;
-            gvRentedMedias.DataBind();
+            //int custId = int.Parse(Request.QueryString["CustomerId"]);
+            //List<Media> medias = v.GetMediaListByCustomerId(custId);
+            //gvRentedMedias.DataSource = medias;
+            //gvRentedMedias.DataBind();
         }
 
         protected void btnSearchTitle_Click(object sender, EventArgs e)
@@ -52,7 +52,7 @@ namespace VideoRentalStore
                 lblAnnouncement.Text = "You have rented " + items + "succesfully. Thank you!";
 
 
-            
+            Response.Redirect("~/RentMedia.aspx?CustomerId=" + customerId);
         }
     }
 }
