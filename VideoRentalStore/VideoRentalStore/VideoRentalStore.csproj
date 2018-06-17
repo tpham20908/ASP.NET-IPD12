@@ -139,6 +139,7 @@
     <Content Include="Customers.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Images\customerOnly.jpg" />
     <Content Include="Images\customers.jpg" />
     <Content Include="Images\newCustomer.jpg" />
     <Content Include="Images\newMedia.jpg" />

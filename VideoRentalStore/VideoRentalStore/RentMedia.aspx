@@ -26,7 +26,7 @@
                     <br />
                     <hr />
 
-                    <h4 class="card-title">Media rented:</h4>
+                    <h4 class="card-title">Items rented:</h4>
                     <asp:GridView ID="gvRentedMedias" runat="server" Width="100%" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" AllowPaging="True" AutoGenerateColumns="False" DataSourceID="ODSMediaListByCustomerId">
                         <Columns>
                             <asp:BoundField DataField="ID" HeaderText="ID" SortExpression="ID" />
@@ -46,7 +46,7 @@
                     </asp:GridView>
                     <asp:ObjectDataSource ID="ODSMediaListByCustomerId" runat="server" SelectMethod="GetMediaListByCustomerId" TypeName="VideoRentalStore.Models.VideoRentalStoreRepository">
                         <SelectParameters>
-                            <asp:QueryStringParameter DefaultValue="null" Name="customerId" QueryStringField="CustomerId" Type="Int32" />
+                            <asp:QueryStringParameter DefaultValue="0" Name="customerId" QueryStringField="CustomerId" Type="Int32" />
                         </SelectParameters>
                     </asp:ObjectDataSource>
                 </div>
