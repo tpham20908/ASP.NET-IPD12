@@ -181,6 +181,10 @@
     <Compile Include="Migrations\201806152104484_AddSomeTables.Designer.cs">
       <DependentUpon>201806152104484_AddSomeTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806170224153_Virtual.cs" />
+    <Compile Include="Migrations\201806170224153_Virtual.Designer.cs">
+      <DependentUpon>201806170224153_Virtual.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Media.cs" />
@@ -231,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806152104484_AddSomeTables.resx">
       <DependentUpon>201806152104484_AddSomeTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806170224153_Virtual.resx">
+      <DependentUpon>201806170224153_Virtual.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

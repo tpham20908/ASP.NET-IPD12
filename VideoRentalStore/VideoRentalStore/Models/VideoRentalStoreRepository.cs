@@ -21,13 +21,29 @@ namespace VideoRentalStore.Models
             return GetCustomers().FirstOrDefault(c => c.ID == id);
         }
 
-        // update customer
-        public void UpdateCustomer(int id)
+        public List<RentalRecord> GetRecordsByCustomerId (int customerId)
         {
-            Customer c = GetCustomerById(id);
-            if (c != null)
+            List<RentalRecord> records = (from r in _context.RentalRecords
+                                          where r.customer.ID == customerId
+                                          select r).ToList();
+            return records;
+        }
+
+        public List<Media> GetMediaListByCustomerId (int customerId)
+        {
+            List<Media> medias = new List<Media>();
+
+            List<RentalRecord> rentalRecords = GetRecordsByCustomerId(customerId);
+
+            if (rentalRecords != null)
             {
+                foreach (RentalRecord record in rentalRecords)
+                {
+                    medias.AddRange(record.RentedMedias);
+                }
             }
+
+            return medias;
         }
 
         public IEnumerable<Media> GetMediaByTitle(string text)

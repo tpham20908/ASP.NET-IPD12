@@ -10,6 +10,8 @@ namespace VideoRentalStore.Models
         public int ID { get; set; }
         public DateTime RentalDate { get; set; }
 
-        public List<Media> RentedMedias { get; set; }
+        public virtual Customer customer { get; set; }
+
+        public virtual List<Media> RentedMedias { get; set; }
     }
 }

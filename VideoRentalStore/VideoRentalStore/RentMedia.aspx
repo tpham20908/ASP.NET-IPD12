@@ -45,9 +45,26 @@
                                 CssClass="bg-info" ForeColor="White" OnClick="btnRent_Click" />
                         </div>
                     </div>
-                    <asp:Label ID="lblAnnouncement" runat="server" 
-                        Font-Italic="true" Font-Bold="true" ForeColor="#996633" ></asp:Label>
+                    <asp:Label ID="lblAnnouncement" runat="server"
+                        Font-Italic="true" Font-Bold="true" ForeColor="#996633"></asp:Label>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <asp:GridView ID="gvRentedMedias" runat="server" Width="100%" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4">
+                    <FooterStyle BackColor="#FFFFCC" ForeColor="#330099" />
+                    <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="#FFFFCC" />
+                    <PagerStyle BackColor="#FFFFCC" ForeColor="#330099" HorizontalAlign="Center" />
+                    <RowStyle BackColor="White" ForeColor="#330099" />
+                    <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
+                    <SortedAscendingCellStyle BackColor="#FEFCEB" />
+                    <SortedAscendingHeaderStyle BackColor="#AF0101" />
+                    <SortedDescendingCellStyle BackColor="#F6F0C0" />
+                    <SortedDescendingHeaderStyle BackColor="#7E0000" />
+                </asp:GridView>
             </div>
         </div>
     </div>
