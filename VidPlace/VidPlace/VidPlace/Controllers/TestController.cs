@@ -1,0 +1,77 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using VidPlace.Models;
+
+namespace VidPlace.Controllers
+{
+    public class TestController : Controller
+    {
+        // GET: Test
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+        public string msg()
+        {
+            return "<img src=\"../../images/stop.png\">";
+        }
+
+        public Customer customer(int id)
+        {
+            Customer c = new Customer()
+            {
+                ID = id,
+                Name = "Justin Trudeau"
+            };
+
+            return c;
+        }
+
+        public ActionResult random(int id)
+        {
+            var media = new Media();
+            media.Id = id;
+            media.Name = "Gone with the wind";
+            media.RentDate = DateTime.Now.AddDays(-2);
+            media.ImageUrl = "../../images/gwtw.jpg";
+            return View(media);
+        }
+
+        //https://bootswatch.com/3/
+
+        public ActionResult ex1()
+        {
+            //return Content("<h3><em>This is Content type return.</em></h3>");
+            //return HttpNotFound();
+            //return new EmptyResult();
+            //return RedirectToAction("Index", "Home");
+            //return RedirectToAction("Action", "Controller", new { model });
+            //return RedirectToAction("Action", "Controller", new { parameter });
+
+            return RedirectToAction("random", new { id = 10005 });
+        }
+
+        public ActionResult edit(int id)
+        {
+            return Content("Provided ID: " + id);
+        }
+
+        public ActionResult ex2(int? pageIndex, string sortby)
+        {
+            if (!pageIndex.HasValue)
+                pageIndex = 1;
+            if (string.IsNullOrEmpty(sortby))
+                sortby = "name";
+            return Content("Page #" + pageIndex + ", sortby: " + sortby);
+        }
+
+        public ActionResult release(int year, int month)
+        {
+            return Content("Year: " + year + ", Month: " + month);
+        }
+    }
+}

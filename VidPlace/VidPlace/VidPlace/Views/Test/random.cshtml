@@ -1,0 +1,17 @@
+﻿@model VidPlace.Models.Media
+@{
+    ViewBag.Title = Model.Name;
+}
+
+<h2>Movie</h2>
+
+<div class="row">
+    <div class="card text-center">
+        <img src="@Model.ImageUrl" />
+        <h3>Media name: @Model.Name</h3>
+        <h3>Id: @Model.Id</h3>
+        <h3>Rented date: @Model.RentDate</h3>
+    </div>
+</div>
+
+
