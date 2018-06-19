@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using VidPlace.Models;
+using VidPlace.ViewModels;
 
 namespace VidPlace.Controllers
 {
@@ -72,6 +73,22 @@ namespace VidPlace.Controllers
         public ActionResult release(int year, int month)
         {
             return Content("Year: " + year + ", Month: " + month);
+        }
+
+        public ActionResult rental()
+        {
+            var media = new Media() { Name = "Avengers" };
+
+            var customer = new List<Customer>
+            {
+                new Customer() { Name = "Iron Man" },
+                new Customer() { Name = "Spider Man" },
+                new Customer() { Name = "Spider Girl" }
+            };
+
+            var model = new RentalMediaVM() { Media = media, Customers = customer };
+
+            return View(model);
         }
     }
 }

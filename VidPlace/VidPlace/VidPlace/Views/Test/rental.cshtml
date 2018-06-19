@@ -1,0 +1,26 @@
+﻿@model VidPlace.ViewModels.RentalMediaVM
+
+@{
+    ViewBag.Title = "rental";
+
+    var className = Model.Customers.Count > 2 ? "jumbotron" : null;
+}
+
+
+
+<h2 class="@className">@Model.Media.Name</h2>
+<hr />
+<div>
+    @if (Model.Customers.Count == 0)
+    {
+        <p class="bg-danger">No one has rented @Model.Media.Name</p>
+    }
+    <ul>
+        @foreach (var customer in Model.Customers)
+        {
+            <li>
+                @Html.ActionLink(@customer.Name, "Index", "Test")
+            </li>
+        }
+    </ul>
+</div>
