@@ -21,9 +21,11 @@ namespace VideoRentalStore.Migrations
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
             
+            /*
             context.Customers.RemoveRange(context.Customers);
             context.RentalRecords.RemoveRange(context.RentalRecords);
             context.Medias.RemoveRange(context.Medias);
+            */
             
             IList<Customer> customers = new List<Customer>();
             // add customer #1
