@@ -52,8 +52,9 @@ namespace VidPlace.Controllers
             //return RedirectToAction("Index", "Home");
             //return RedirectToAction("Action", "Controller", new { model });
             //return RedirectToAction("Action", "Controller", new { parameter });
-
             return RedirectToAction("random", new { id = 10005 });
+
+            //return RedirectToAction("random", "test", new { userName = "Alex123" });
         }
 
         public ActionResult edit(int id)
@@ -61,6 +62,7 @@ namespace VidPlace.Controllers
             return Content("Provided ID: " + id);
         }
 
+        [Route("test/ex2/{pageIndex:range(2000,2010)}/{sortby?}")]
         public ActionResult ex2(int? pageIndex, string sortby)
         {
             if (!pageIndex.HasValue)
@@ -70,6 +72,7 @@ namespace VidPlace.Controllers
             return Content("Page #" + pageIndex + ", sortby: " + sortby);
         }
 
+        [Route("Test/release/{year:range(2018, 2028)}/{month:range(1,12)}")]
         public ActionResult release(int year, int month)
         {
             return Content("Year: " + year + ", Month: " + month);

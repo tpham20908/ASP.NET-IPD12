@@ -13,6 +13,9 @@ namespace VidPlace
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapMvcAttributeRoutes();
+
+            /*
             routes.MapRoute(
                 name: "Release",
                 url: "Test/Release/{year}/{month}",
@@ -25,7 +28,7 @@ namespace VidPlace
                 url: "Test/ex2/{pageIndex}/{sortby}",
                 defaults: new { controller = "Test", action = "ex2" }
             );
-
+            */
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
