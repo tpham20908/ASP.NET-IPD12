@@ -20,7 +20,11 @@
         <div class="card">
             <table class="table table-bordered table-hover">
                 <thead>
-                    <tr><h2>Customer list:</h2></tr>
+                    <tr>
+                        <td><h2>Customer list:</h2></td>
+                        <td><h2>Membership type:</h2></td>
+                        <td><h2>Discount rate:</h2></td>
+                    </tr>
                 </thead>
                 <tbody>
                     @if (!Model.Any())
@@ -31,12 +35,14 @@
                     {
                         foreach (var customer in Model)
                         {
-                            <tr>
-                                <td>@customer.Name</td>
-                                <td>
-                                    @Html.ActionLink("Detail", "Detail", "Media", new { id = customer.ID }, null)
-                                </td>
-                            </tr>
+                        <tr>
+                            <td>@customer.Name</td>
+                            <td>@customer.Membership.Name</td>
+                            <td>@customer.Membership.DiscountRate%</td>
+                            <td>
+                                @Html.ActionLink("Detail", "Detail", "Media", new { id = customer.ID }, null)
+                            </td>
+                        </tr>
                         }
                     }
 

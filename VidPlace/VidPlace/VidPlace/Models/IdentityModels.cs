@@ -26,6 +26,8 @@ namespace VidPlace.Models
         }
 
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<Media> Medias { get; set; }
+        public DbSet<Membership> Memberships { get; set; }
 
         public static ApplicationDbContext Create()
         {

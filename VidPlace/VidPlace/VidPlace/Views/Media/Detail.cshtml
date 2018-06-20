@@ -2,6 +2,7 @@
 
 @{
     Layout = null;
+    ViewBag.Title = "Customer Detail";
 }
 
 <!DOCTYPE html>
@@ -21,11 +22,24 @@
             <table class="table table-bordered table-hover bg-info">
                 <tr>
                     <td>Id</td>
+                    <td>Birthdate</td>
                     <td>@Model.ID</td>
+                    <td>Membership type</td>
+                    <td>Discount Rate</td>
                 </tr>
                 <tr>
                     <td>Name</td>
+                    @if (Model.Birthdate.HasValue)
+                    {
+                        <td>@Model.Birthdate.Value.ToShortDateString()</td>
+                    }
+                    else
+                    {
+                        <td>N/A</td>
+                    }
                     <td>@Model.Name</td>
+                    <td>@Model.Membership.Name</td>
+                    <td>@Model.Membership.DiscountRate</td>
                 </tr>
             </table>
 

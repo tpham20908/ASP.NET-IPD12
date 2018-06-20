@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using VidPlace.Models;
 using VidPlace.ViewModels;
+using System.Data.Entity;
 
 namespace VidPlace.Controllers
 {
@@ -19,11 +20,32 @@ namespace VidPlace.Controllers
             _context = new ApplicationDbContext();
         }
 
-        // GET: Media
+        // Get: Media
+        public ActionResult getmedia()
+        {
+            var media = _context.Medias.ToList();
+            return View(media);
+        }
+
+        // Get: detailmedia
+        public ActionResult detailmedia(int id)
+        {
+            var model = _context.Medias
+                .Include(m => m.Genres)
+                .Include(m => m.MediaType)
+                .FirstOrDefault(m => m.Id == id);
+
+            if (model == null)
+                return HttpNotFound();
+            else
+                return View(model);
+        }
+
+        // GET: Customer
         public ActionResult Index()
         {
-            
-            var customers = GetCustomer();
+            var customers = _context.Customers.Include(cust => cust.Membership).ToList();
+            //var customers = GetCustomer();
             //var customers = new List<Customer>();
 
             // var media = new Media() { Name = "Avengers" };
@@ -35,29 +57,40 @@ namespace VidPlace.Controllers
 
         public ActionResult Detail(int id)
         {
-            Customer customer = GetCustomer().FirstOrDefault(c => c.ID == id);
+            // Customer customer = GetCustomer().FirstOrDefault(c => c.ID == id);
+
+            Customer customer = _context.Customers
+                .Include(cust => cust.Membership)
+                .FirstOrDefault(cust => cust.ID == id);
+            
             if (customer == null)
                 return HttpNotFound();
             else
                 return View(customer);
         }
 
+        public ActionResult NewCustomer()
+        {
+            var model = new CustomerMembershipVM()
+            {
+                Memberships = _context.Memberships.ToList()
+            };
+            return View(model);
+        }
+
+        /*
         public ActionResult getallmedia()
         {
             var model = GetMedia();
             return View(model);
         }
 
-        public ActionResult detailmedia(int id)
-        {
-            var model = GetMedia().FirstOrDefault(m => m.Id == id);
-            return View(model);
-        }
+        
 
         public IEnumerable<Customer> GetCustomer()
         {
             var customers = _context.Customers.ToList();
-            /*
+            
             var customers = new List<Customer>
             {
                 new Customer() { ID = 1, Name = "Iron Man" },
@@ -66,7 +99,7 @@ namespace VidPlace.Controllers
                 new Customer() { ID = 4, Name = "Batman" },
                 new Customer() { ID = 5, Name = "Batgirl" }
             };
-            */
+            
             return customers;
         }
 
@@ -80,5 +113,6 @@ namespace VidPlace.Controllers
             };
             return media;
         }
+        */
     }
 }

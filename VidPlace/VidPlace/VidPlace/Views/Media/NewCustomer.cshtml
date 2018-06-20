@@ -1,0 +1,108 @@
+﻿@model VidPlace.Models.CustomerMembershipVM
+
+@{
+    Layout = null;
+    ViewBag.Title = "New Customer";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <title>New Customer</title>
+</head>
+<body>
+    @Html.Partial("_NavBar")
+
+    <div class="container">
+        @using (Html.BeginForm("Save", "Customers"))
+        {
+            <div class="form-group">
+                @Html.LabelFor(m => m.Customer.Name)
+                @Html.TextBoxFor(m => m.Customer.Name, new { @class = "form-control" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Customer.Address)
+                @Html.TextBoxFor(m => m.Customer.Address, new { @class = "form-control" })
+            </div>
+
+            <div class="checkbox">
+                <label>
+                    @Html.CheckBoxFor(m => m.Customer.IsSubcribedToNewsLetter)
+                    Subscribe to Newsletter
+                </label>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Customer.MembershipId)
+                @Html.DropDownListFor(
+               m => m.Customer.MembershipId,
+               new SelectList(Model.Memberships, "Id", "Name"),
+               "Please select a membership",
+               new { @class = "form-control" }
+               )
+            </div>
+
+
+            /*
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h4>Customer</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Birthdate, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Birthdate, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Birthdate, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.IsSubcribedToNewsLetter, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <div class="checkbox">
+                            @Html.EditorFor(model => model.IsSubcribedToNewsLetter)
+                            @Html.ValidationMessageFor(model => model.IsSubcribedToNewsLetter, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.MembershipId, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.MembershipId, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.MembershipId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+            */
+        }
+
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+
+        @Html.Partial("_Footer")
+
+    </div>
+</body>
+</html>

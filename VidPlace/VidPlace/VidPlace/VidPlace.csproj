@@ -243,12 +243,79 @@
     <Compile Include="Migrations\201806191736470_ConstrainStringLengthToName.Designer.cs">
       <DependentUpon>201806191736470_ConstrainStringLengthToName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806201315130_AddNameToMembership.cs" />
+    <Compile Include="Migrations\201806201315130_AddNameToMembership.Designer.cs">
+      <DependentUpon>201806201315130_AddNameToMembership.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806201316185_AddNameToMembership1.cs" />
+    <Compile Include="Migrations\201806201316185_AddNameToMembership1.Designer.cs">
+      <DependentUpon>201806201316185_AddNameToMembership1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806201343084_AddBirthdateToCustomer.cs" />
+    <Compile Include="Migrations\201806201343084_AddBirthdateToCustomer.Designer.cs">
+      <DependentUpon>201806201343084_AddBirthdateToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806201410014_AddMediasTable.cs" />
+    <Compile Include="Migrations\201806201410014_AddMediasTable.Designer.cs">
+      <DependentUpon>201806201410014_AddMediasTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806201411089_PopulateMedias.cs" />
+    <Compile Include="Migrations\201806201411089_PopulateMedias.Designer.cs">
+      <DependentUpon>201806201411089_PopulateMedias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806201504255_AddTypeAndGenreToMedia.cs" />
+    <Compile Include="Migrations\201806201504255_AddTypeAndGenreToMedia.Designer.cs">
+      <DependentUpon>201806201504255_AddTypeAndGenreToMedia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806201539542_AddMediaTypeAndGenreTables.cs" />
+    <Compile Include="Migrations\201806201539542_AddMediaTypeAndGenreTables.Designer.cs">
+      <DependentUpon>201806201539542_AddMediaTypeAndGenreTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806201541502_AddMediaTypeAndGenreTables2.cs" />
+    <Compile Include="Migrations\201806201541502_AddMediaTypeAndGenreTables2.Designer.cs">
+      <DependentUpon>201806201541502_AddMediaTypeAndGenreTables2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806201547223_AddMediaTypeAndGenreTables21.cs" />
+    <Compile Include="Migrations\201806201547223_AddMediaTypeAndGenreTables21.Designer.cs">
+      <DependentUpon>201806201547223_AddMediaTypeAndGenreTables21.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806201608052_AddMediaTypeAndGenreTables3.cs" />
+    <Compile Include="Migrations\201806201608052_AddMediaTypeAndGenreTables3.Designer.cs">
+      <DependentUpon>201806201608052_AddMediaTypeAndGenreTables3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806201609396_AddMediaTypeAndGenreTables31.cs" />
+    <Compile Include="Migrations\201806201609396_AddMediaTypeAndGenreTables31.Designer.cs">
+      <DependentUpon>201806201609396_AddMediaTypeAndGenreTables31.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806201619041_AddMediaTypeAndGenreTables4.cs" />
+    <Compile Include="Migrations\201806201619041_AddMediaTypeAndGenreTables4.Designer.cs">
+      <DependentUpon>201806201619041_AddMediaTypeAndGenreTables4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806201644200_AddReleaseDateToMedia.cs" />
+    <Compile Include="Migrations\201806201644200_AddReleaseDateToMedia.Designer.cs">
+      <DependentUpon>201806201644200_AddReleaseDateToMedia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806201652090_AddNumberInStockToMedia.cs" />
+    <Compile Include="Migrations\201806201652090_AddNumberInStockToMedia.Designer.cs">
+      <DependentUpon>201806201652090_AddNumberInStockToMedia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806201729057_AddAddressToCustomer.cs" />
+    <Compile Include="Migrations\201806201729057_AddAddressToCustomer.Designer.cs">
+      <DependentUpon>201806201729057_AddAddressToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806201749158_AddMembership1.cs" />
+    <Compile Include="Migrations\201806201749158_AddMembership1.Designer.cs">
+      <DependentUpon>201806201749158_AddMembership1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\CustomerMembershipVM.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Media.cs" />
+    <Compile Include="Models\MediaType.cs" />
     <Compile Include="Models\Membership.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -263,8 +330,13 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\asp.jfif" />
+    <Content Include="images\fashion.jfif" />
     <Content Include="images\gwtw.jpg" />
+    <Content Include="images\spidergirl.jfif" />
+    <Content Include="images\spiderman.jfif" />
     <Content Include="images\stop.png" />
+    <Content Include="images\superman.jfif" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config" />
@@ -324,8 +396,9 @@
     <Content Include="Views\Media\Index.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Media\Detail.cshtml" />
-    <Content Include="Views\Media\getallmedia.cshtml" />
     <Content Include="Views\Media\detailmedia.cshtml" />
+    <Content Include="Views\Media\getmedia.cshtml" />
+    <Content Include="Views\Media\NewCustomer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -373,6 +446,54 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806191736470_ConstrainStringLengthToName.resx">
       <DependentUpon>201806191736470_ConstrainStringLengthToName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806201315130_AddNameToMembership.resx">
+      <DependentUpon>201806201315130_AddNameToMembership.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806201316185_AddNameToMembership1.resx">
+      <DependentUpon>201806201316185_AddNameToMembership1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806201343084_AddBirthdateToCustomer.resx">
+      <DependentUpon>201806201343084_AddBirthdateToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806201410014_AddMediasTable.resx">
+      <DependentUpon>201806201410014_AddMediasTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806201411089_PopulateMedias.resx">
+      <DependentUpon>201806201411089_PopulateMedias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806201504255_AddTypeAndGenreToMedia.resx">
+      <DependentUpon>201806201504255_AddTypeAndGenreToMedia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806201539542_AddMediaTypeAndGenreTables.resx">
+      <DependentUpon>201806201539542_AddMediaTypeAndGenreTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806201541502_AddMediaTypeAndGenreTables2.resx">
+      <DependentUpon>201806201541502_AddMediaTypeAndGenreTables2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806201547223_AddMediaTypeAndGenreTables21.resx">
+      <DependentUpon>201806201547223_AddMediaTypeAndGenreTables21.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806201608052_AddMediaTypeAndGenreTables3.resx">
+      <DependentUpon>201806201608052_AddMediaTypeAndGenreTables3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806201609396_AddMediaTypeAndGenreTables31.resx">
+      <DependentUpon>201806201609396_AddMediaTypeAndGenreTables31.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806201619041_AddMediaTypeAndGenreTables4.resx">
+      <DependentUpon>201806201619041_AddMediaTypeAndGenreTables4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806201644200_AddReleaseDateToMedia.resx">
+      <DependentUpon>201806201644200_AddReleaseDateToMedia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806201652090_AddNumberInStockToMedia.resx">
+      <DependentUpon>201806201652090_AddNumberInStockToMedia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806201729057_AddAddressToCustomer.resx">
+      <DependentUpon>201806201729057_AddAddressToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806201749158_AddMembership1.resx">
+      <DependentUpon>201806201749158_AddMembership1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

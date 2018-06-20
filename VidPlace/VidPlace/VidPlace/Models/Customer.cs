@@ -12,6 +12,11 @@ namespace VidPlace.Models
         [Required]
         [StringLength(50)]
         public string Name { get; set; }
+
+        public string Address { get; set; }
+        
+        public DateTime? Birthdate { get; set; }
+
         public bool IsSubcribedToNewsLetter { get; set; }
 
         public Membership Membership { get; set; }
