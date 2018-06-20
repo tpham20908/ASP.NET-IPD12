@@ -340,8 +340,8 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config" />
-    <None Include="Properties\PublishProfiles\orderssearch - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\orderssearch - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\tung - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\tung - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1-vsdoc.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
