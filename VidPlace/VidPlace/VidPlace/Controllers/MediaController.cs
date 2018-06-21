@@ -73,9 +73,83 @@ namespace VidPlace.Controllers
         {
             var model = new CustomerMembershipVM()
             {
+                Customer = new Customer(),
                 Memberships = _context.Memberships.ToList()
             };
             return View(model);
+        }
+
+        // saving action into DB
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Save(Customer customer)
+        {
+            // check if the form is valid - Sever side validation
+            if (!ModelState.IsValid)
+            {
+                // return same form to user
+                var vm = new CustomerMembershipVM
+                {
+                    Customer = customer,
+                    Memberships = _context.Memberships.ToList()
+                };
+
+                return View("NewCustomer", vm);
+            }
+
+            if (customer.ID == 0)
+            {
+                _context.Customers.Add(customer);
+            }
+            else
+            {
+                var customerInDB = _context.Customers.Single(c => c.ID == customer.ID);
+
+                //TryUpdateModel(customerInDB);
+
+                // Update manualy
+                customerInDB.Name = customer.Name;
+                customerInDB.Address = customer.Address;
+                customerInDB.Birthdate = customer.Birthdate;
+                customerInDB.IsSubcribedToNewsLetter = customer.IsSubcribedToNewsLetter;
+                customerInDB.MembershipId = customer.MembershipId;
+            }
+            _context.SaveChanges();
+
+            //return RedirectToAction("Index", "Media); 
+            return RedirectToAction("Index");
+        }
+
+        //Edit
+        public ActionResult Edit(int id)
+        {
+            var customer = _context.Customers.FirstOrDefault(c => c.ID == id);
+
+            if (customer == null)
+                return HttpNotFound();
+
+            var vm = new CustomerMembershipVM
+            {
+                Customer = customer,
+                Memberships = _context.Memberships.ToList()
+            };
+
+            return View("NewCustomer", vm);
+        }
+
+        // new Media
+        public ActionResult NewMedia()
+        {
+            var genres = _context.Genres;
+            var mediaTypes = _context.MediaTypes;
+            var vm = new MediaVM
+            {
+                Media = new Media(),
+                Genres = genres,
+                MediaTypes = mediaTypes
+            };
+
+            return View(vm);
         }
 
         /*

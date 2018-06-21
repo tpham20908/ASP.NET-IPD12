@@ -17,13 +17,13 @@
 
     <div class="container jumbotron">
 
-        <div class="card">
+        <div class="card bg-info">
             <table class="table table-bordered table-hover">
                 <thead>
                     <tr>
-                        <td><h2>Customer list:</h2></td>
-                        <td><h2>Membership type:</h2></td>
-                        <td><h2>Discount rate:</h2></td>
+                        <td><h4>Customer list</h4></td>
+                        <td><h4>Membership type</h4></td>
+                        <td><h4>Discount rate</h4></td>
                     </tr>
                 </thead>
                 <tbody>
@@ -42,12 +42,18 @@
                             <td>
                                 @Html.ActionLink("Detail", "Detail", "Media", new { id = customer.ID }, null)
                             </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", "Media", new { id = customer.ID }, null)
+                            </td>
                         </tr>
                         }
                     }
 
                 </tbody>
             </table>
+        </div>
+        <div>
+            @Html.ActionLink("New Customer", "NewCustomer")
         </div>
     </div>
 

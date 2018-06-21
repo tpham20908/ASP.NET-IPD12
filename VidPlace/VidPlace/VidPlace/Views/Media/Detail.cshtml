@@ -23,12 +23,13 @@
                 <tr>
                     <td>Id</td>
                     <td>Birthdate</td>
-                    <td>@Model.ID</td>
+                    <td>Name</td>
+                    <td>Address</td>
                     <td>Membership type</td>
                     <td>Discount Rate</td>
                 </tr>
                 <tr>
-                    <td>Name</td>
+                    <td>@Model.ID</td>
                     @if (Model.Birthdate.HasValue)
                     {
                         <td>@Model.Birthdate.Value.ToShortDateString()</td>
@@ -38,6 +39,7 @@
                         <td>N/A</td>
                     }
                     <td>@Model.Name</td>
+                    <td>@Model.Address</td>
                     <td>@Model.Membership.Name</td>
                     <td>@Model.Membership.DiscountRate</td>
                 </tr>

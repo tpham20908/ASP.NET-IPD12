@@ -9,12 +9,13 @@ namespace VidPlace.Models
     public class Customer
     {
         public int ID { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Please enter your name")]
         [StringLength(50)]
         public string Name { get; set; }
 
         public string Address { get; set; }
         
+        [Min18YearsIfMember]
         public DateTime? Birthdate { get; set; }
 
         public bool IsSubcribedToNewsLetter { get; set; }
