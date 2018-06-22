@@ -84,6 +84,7 @@ namespace Phono.Controllers
         }
 
         //Edit
+        //[Authorize]
         public ActionResult Edit(int id)
         {
             var phone = db.Phones.FirstOrDefault(p => p.Id == id);
@@ -101,69 +102,19 @@ namespace Phono.Controllers
             return View("Create", vm);
         }
 
-
-        // POST: Phone/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,PhoneName,DateReleased,ScreenSize,ImageUrl,BrandId,PhoneTypeId")] Phone phone)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Phones.Add(phone);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            ViewBag.BrandId = new SelectList(db.Brands, "Id", "BrandName", phone.BrandId);
-            ViewBag.PhoneTypeId = new SelectList(db.PhoneTypes, "Id", "Type", phone.PhoneTypeId);
-            return View(phone);
-        }
-
-        // GET: Phone/Edit/5
-        //public ActionResult Edit(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    Phone phone = db.Phones.Find(id);
-        //    if (phone == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    ViewBag.BrandId = new SelectList(db.Brands, "Id", "BrandName", phone.BrandId);
-        //    ViewBag.PhoneTypeId = new SelectList(db.PhoneTypes, "Id", "Type", phone.PhoneTypeId);
-        //    return View(phone);
-        //}
-
-        // POST: Phone/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,PhoneName,DateReleased,ScreenSize,ImageUrl,BrandId,PhoneTypeId")] Phone phone)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(phone).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            ViewBag.BrandId = new SelectList(db.Brands, "Id", "BrandName", phone.BrandId);
-            ViewBag.PhoneTypeId = new SelectList(db.PhoneTypes, "Id", "Type", phone.PhoneTypeId);
-            return View(phone);
-        }
-
         // GET: Phone/Delete/5
+        //[Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return HttpNotFound();
             }
-            Phone phone = db.Phones.Find(id);
+            Phone phone = db.Phones
+                .Include(p => p.Brand)
+                .Include(p => p.PhoneType)
+                .SingleOrDefault(p => p.Id == id);
+
             if (phone == null)
             {
                 return HttpNotFound();
@@ -180,15 +131,6 @@ namespace Phono.Controllers
             db.Phones.Remove(phone);
             db.SaveChanges();
             return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
         }
     }
 }

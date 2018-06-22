@@ -12,51 +12,51 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Brand.BrandName)
+            @Html.DisplayNameFor(m => m.Brand.BrandName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Brand.BrandName)
+            @Html.DisplayFor(m => m.Brand.BrandName)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.PhoneType.Type)
+            @Html.DisplayNameFor(m => m.PhoneType.Type)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.PhoneType.Type)
+            @Html.DisplayFor(m => m.PhoneType.Type)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.PhoneName)
+            @Html.DisplayNameFor(m => m.PhoneName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.PhoneName)
+            @Html.DisplayFor(m => m.PhoneName)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.DateReleased)
+            @Html.DisplayNameFor(m => m.DateReleased)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.DateReleased)
+            @Html.DisplayFor(m => m.DateReleased)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ScreenSize)
+            @Html.DisplayNameFor(m => m.ScreenSize)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ScreenSize)
+            @Html.DisplayFor(m => m.ScreenSize)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ImageUrl)
+            @Html.DisplayNameFor(m => m.ImageUrl)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ImageUrl)
+            <img src="@Model.ImageUrl" />
         </dd>
 
     </dl>
