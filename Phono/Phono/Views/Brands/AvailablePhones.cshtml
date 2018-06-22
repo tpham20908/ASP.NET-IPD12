@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Phono.Models.Phone>
+
+@{
+    ViewBag.Title = "AvailablePhones";
+    if (Model.ToList().Count == 0)
+    {
+        ViewBag.Header = "There are no phones from this brand";
+    }
+    else
+    {
+        ViewBag.Header = Model.ElementAt(0).Brand.BrandName + " phones:";
+    }
+}
+
+<h2>@ViewBag.Header</h2>
+
+<ul class="list-group">
+    @foreach (var phone in Model)
+    {
+        <li class="list-group-item">@phone.PhoneName</li>
+    }
+</ul>
+
+@Html.ActionLink("Back to List", "Index")

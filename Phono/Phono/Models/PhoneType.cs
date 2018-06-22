@@ -8,7 +8,6 @@ namespace Phono.Models
 {
     public class PhoneType
     {
-        [Display(Name = "Type")]
         public byte Id { get; set; }
 
         [Required]

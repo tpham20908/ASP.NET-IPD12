@@ -8,12 +8,11 @@ namespace Phono.Models
 {
     public class Brand
     {
-        [Display(Name = "Brand")]
         public byte Id { get; set; }
 
         [Required]
         [MaxLength(255)]
-        [Display(Name = "Brand")]
+        [Display(Name = "Brand Name")]
         public string BrandName { get; set; }
 
         [Display(Name = "Country of Origin")]

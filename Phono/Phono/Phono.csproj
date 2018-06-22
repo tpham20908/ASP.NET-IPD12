@@ -226,6 +226,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Brand.cs" />
+    <Compile Include="Models\CreatePhoneVM.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Phone.cs" />
@@ -242,6 +243,14 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\iphone3g.png" />
+    <Content Include="Images\iphone5c.png" />
+    <Content Include="Images\iphone8.jpg" />
+    <Content Include="Images\iphone8.png" />
+    <Content Include="Images\lenovok6note.png" />
+    <Content Include="Images\lenovok8plus.png" />
+    <Content Include="Images\lenovop2.png" />
+    <Content Include="Images\novaplus.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -301,6 +310,7 @@
     <Content Include="Views\Phone\Details.cshtml" />
     <Content Include="Views\Phone\Edit.cshtml" />
     <Content Include="Views\Phone\Index.cshtml" />
+    <Content Include="Views\Brands\AvailablePhones.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

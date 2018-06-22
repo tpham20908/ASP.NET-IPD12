@@ -1,4 +1,4 @@
-﻿@model Phono.Models.Phone
+﻿@model Phono.Models.CreatePhoneVM
 
 @{
     ViewBag.Title = "Create";
@@ -7,65 +7,76 @@
 <h2>Create</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("Save", "Phone"))
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Phone</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(m => m.Phone.Id)
         <div class="form-group">
-            @Html.LabelFor(model => model.PhoneName, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(m => m.Phone.PhoneName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.PhoneName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PhoneName, "", new { @class = "text-danger" })
+                @Html.EditorFor(m => m.Phone.PhoneName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(m => m.Phone.PhoneName, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.DateReleased, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(m => m.Phone.DateReleased, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.DateReleased, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.DateReleased, "", new { @class = "text-danger" })
+                @Html.EditorFor(m => m.Phone.DateReleased, new { htmlAttributes = new { @class = "form-control", type = "date" } })
+                @Html.ValidationMessageFor(m => m.Phone.DateReleased, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.ScreenSize, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(m => m.Phone.ScreenSize, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ScreenSize, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ScreenSize, "", new { @class = "text-danger" })
+                @Html.EditorFor(m => m.Phone.ScreenSize, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(m => m.Phone.ScreenSize, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.ImageUrl, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(m => m.Phone.ImageUrl, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ImageUrl, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ImageUrl, "", new { @class = "text-danger" })
+                @Html.EditorFor(m => m.Phone.ImageUrl, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(m => m.Phone.ImageUrl, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.BrandId, "BrandId", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(m => m.Phone.BrandId, "Brand", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("BrandId", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.BrandId, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(
+               m => m.Phone.BrandId,
+               new SelectList(Model.Brands, "Id", "BrandName"),
+               "Select a brand",
+               new { @class="form-control"}
+               )
+                @Html.ValidationMessageFor(m => m.Phone.BrandId, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.PhoneTypeId, "PhoneTypeId", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(m => m.Phone.PhoneTypeId, "Type", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("PhoneTypeId", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.PhoneTypeId, "", new { @class = "text-danger" })
+                @Html.DropDownListFor(
+               m => m.Phone.PhoneTypeId,
+               new SelectList(Model.PhoneTypes, "Id", "Type", "OS"),
+               "Select a type",
+               new { @class="form-control"}
+               )
+                @Html.ValidationMessageFor(m => m.Phone.PhoneTypeId, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Save" class="btn btn-default" />
             </div>
         </div>
     </div>

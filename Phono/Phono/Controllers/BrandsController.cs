@@ -20,6 +20,17 @@ namespace Phono.Controllers
             return View(db.Brands.ToList());
         }
 
+        public ActionResult AvailablePhones(int id)
+        {
+            var phones = db.Phones
+                .Include(p => p.Brand)
+                .Include(p => p.PhoneType)
+                .Where(p => p.BrandId == id)
+                .ToList();
+
+             return View(phones);
+        }
+
         // GET: Brands/Details/5
         public ActionResult Details(byte? id)
         {

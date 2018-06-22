@@ -22,13 +22,11 @@ namespace Phono.Models
 
         [Required]
         public Brand Brand { get; set; }
-        [Display(Name = "Brand")]
         public byte BrandId { get; set; }
 
         [Required]
         [Display(Name = "Phone Type")]
         public PhoneType PhoneType { get; set; }
-        [Display(Name = "Type")]
         public byte PhoneTypeId { get; set; }
     }
 }

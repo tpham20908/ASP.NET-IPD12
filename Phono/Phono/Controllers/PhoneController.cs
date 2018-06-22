@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using Phono.Models;
 
@@ -28,7 +24,10 @@ namespace Phono.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Phone phone = db.Phones.Find(id);
+            Phone phone = db.Phones
+                .Include(p => p.Brand)
+                .Include(p => p.PhoneType)
+                .FirstOrDefault(p => p.Id == id);
             if (phone == null)
             {
                 return HttpNotFound();
@@ -39,10 +38,69 @@ namespace Phono.Controllers
         // GET: Phone/Create
         public ActionResult Create()
         {
-            ViewBag.BrandId = new SelectList(db.Brands, "Id", "BrandName");
-            ViewBag.PhoneTypeId = new SelectList(db.PhoneTypes, "Id", "Type");
-            return View();
+            var vm = new CreatePhoneVM
+            {
+                Phone = new Phone(),
+                Brands = db.Brands.ToList(),
+                PhoneTypes = db.PhoneTypes.ToList()
+            };
+
+            return View(vm);
         }
+
+        public ActionResult Save(Phone phone)
+        {
+
+            var errors = ModelState.Values.SelectMany(v => v.Errors);
+
+            // check if the form is valid - Sever side validation
+            if (!ModelState.IsValid)
+            {
+                // return same form to user
+                var vm = new CreatePhoneVM
+                {
+                    Phone = phone,
+                    Brands = db.Brands.ToList(),
+                    PhoneTypes = db.PhoneTypes.ToList()
+                };
+
+                return View("Create", vm);
+            }
+
+            if (phone.Id == 0)
+            {
+                db.Phones.Add(phone);
+            }
+            else
+            {
+                var phoneInDB = db.Phones.Single(p => p.Id == phone.Id);
+
+                TryUpdateModel(phoneInDB);
+            }
+
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
+        //Edit
+        public ActionResult Edit(int id)
+        {
+            var phone = db.Phones.FirstOrDefault(p => p.Id == id);
+
+            if (phone == null)
+                return HttpNotFound();
+
+            var vm = new CreatePhoneVM
+            {
+                Phone = phone,
+                Brands = db.Brands.ToList(),
+                PhoneTypes = db.PhoneTypes.ToList()
+            };
+
+            return View("Create", vm);
+        }
+
 
         // POST: Phone/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
@@ -64,21 +122,21 @@ namespace Phono.Controllers
         }
 
         // GET: Phone/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Phone phone = db.Phones.Find(id);
-            if (phone == null)
-            {
-                return HttpNotFound();
-            }
-            ViewBag.BrandId = new SelectList(db.Brands, "Id", "BrandName", phone.BrandId);
-            ViewBag.PhoneTypeId = new SelectList(db.PhoneTypes, "Id", "Type", phone.PhoneTypeId);
-            return View(phone);
-        }
+        //public ActionResult Edit(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    Phone phone = db.Phones.Find(id);
+        //    if (phone == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    ViewBag.BrandId = new SelectList(db.Brands, "Id", "BrandName", phone.BrandId);
+        //    ViewBag.PhoneTypeId = new SelectList(db.PhoneTypes, "Id", "Type", phone.PhoneTypeId);
+        //    return View(phone);
+        //}
 
         // POST: Phone/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
