@@ -84,7 +84,7 @@ namespace Phono.Controllers
         }
 
         //Edit
-        //[Authorize]
+        [Authorize]
         public ActionResult Edit(int id)
         {
             var phone = db.Phones.FirstOrDefault(p => p.Id == id);
@@ -103,7 +103,7 @@ namespace Phono.Controllers
         }
 
         // GET: Phone/Delete/5
-        //[Authorize]
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)

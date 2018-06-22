@@ -17,7 +17,10 @@
 <ul class="list-group">
     @foreach (var phone in Model)
     {
-        <li class="list-group-item">@phone.PhoneName</li>
+        <li class="list-group-item">
+            @Html.ActionLink(@phone.PhoneName, "Details", "Phone", new { id = phone.Id}, null)
+    
+        </li>
     }
 </ul>
 

@@ -70,6 +70,7 @@ namespace Phono.Controllers
         }
 
         // GET: Brands/Edit/5
+        [Authorize]
         public ActionResult Edit(byte? id)
         {
             if (id == null)
@@ -101,6 +102,7 @@ namespace Phono.Controllers
         }
 
         // GET: Brands/Delete/5
+        [Authorize]
         public ActionResult Delete(byte? id)
         {
             if (id == null)

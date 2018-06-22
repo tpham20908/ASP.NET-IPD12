@@ -9,56 +9,56 @@
 <div>
     <h4>Phone</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(m => m.Brand.BrandName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(m => m.Brand.BrandName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(m => m.PhoneType.Type)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(m => m.PhoneType.Type)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(m => m.PhoneName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(m => m.PhoneName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(m => m.DateReleased)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(m => m.DateReleased)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(m => m.ScreenSize)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(m => m.ScreenSize)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(m => m.ImageUrl)
-        </dt>
-
-        <dd>
-            <img src="@m.ImageUrl" />
-        </dd>
-
-    </dl>
+    <ul>
+        <li>
+            <div class="col-md-2 text-uppercase">
+                @Html.DisplayNameFor(m => m.Brand.BrandName)
+            </div>
+            <div class="col-md-10">
+                @Html.DisplayFor(m => m.Brand.BrandName)
+            </div>
+        </li>
+        <li>
+            <div class="col-md-2 text-uppercase">
+                @Html.DisplayNameFor(m => m.PhoneType.Type)
+            </div>
+            <div class="col-md-10">
+                @Html.DisplayFor(m => m.PhoneType.Type)
+            </div>
+        </li>
+        <li>
+            <div class="col-md-2 text-uppercase">
+                @Html.DisplayNameFor(m => m.PhoneName)
+            </div>
+            <div class="col-md-10">
+                @Html.DisplayFor(m => m.PhoneName)
+            </div>
+        </li>
+        <li>
+            <div class="col-md-2 text-uppercase">
+                @Html.DisplayNameFor(m => m.DateReleased)
+            </div>
+            <div class="col-md-10">
+                @Html.DisplayFor(m => m.DateReleased)
+            </div>
+        </li>
+        <li>
+            <div class="col-md-2 text-uppercase">
+                @Html.DisplayNameFor(m => m.ScreenSize)
+            </div>
+            <div class="col-md-10">
+                @Html.DisplayFor(m => m.ScreenSize)
+            </div>
+        </li>
+        <li>
+            <div class="col-md-2 text-uppercase">
+                @Html.DisplayNameFor(m => m.ImageUrl)
+            </div>
+            <div class="col-md-10">
+                <img src="@Model.ImageUrl" />
+            </div>
+        </li>
+    </ul>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
