@@ -16,45 +16,55 @@
     @Html.Partial("_NavBar")
 
     <div class="container jumbotron">
+        @if (!Model.Any())
+        {
+            <div class="text-danger">There is no customer</div>
+        }
+        else
+        {
+            using (Html.BeginForm("Index", "Media", FormMethod.Get))
+            {
+                <p>Find customer by Name: @Html.TextBox("SearchString")</p>
+                <input type="submit" value="Search" />
+            }
 
-        <div class="card bg-info">
-            <table class="table table-bordered table-hover">
-                <thead>
-                    <tr>
-                        <td><h4>Customer list</h4></td>
-                        <td><h4>Membership type</h4></td>
-                        <td><h4>Discount rate</h4></td>
-                    </tr>
-                </thead>
-                <tbody>
-                    @if (!Model.Any())
-                    {
-                        <div class="text-danger">There is no customer</div>
-                    }
-                    else
-                    {
-                        foreach (var customer in Model)
-                        {
+            <div class="card bg-info">
+                <table class="table table-bordered table-hover">
+                    <thead>
                         <tr>
-                            <td>@customer.Name</td>
-                            <td>@customer.Membership.Name</td>
-                            <td>@customer.Membership.DiscountRate%</td>
-                            <td>
-                                @Html.ActionLink("Detail", "Detail", "Media", new { id = customer.ID }, null)
-                            </td>
-                            <td>
-                                @Html.ActionLink("Edit", "Edit", "Media", new { id = customer.ID }, null)
-                            </td>
+                            <td><h4>Customer list</h4></td>
+                            <td><h4>Membership type</h4></td>
+                            <td><h4>Discount rate</h4></td>
                         </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var customer in Model)
+                        {
+                            <tr>
+                                <td>@customer.Name</td>
+                                <td>@customer.Membership.Name</td>
+                                <td>@customer.Membership.DiscountRate%</td>
+                                <td>
+                                    @Html.ActionLink("Detail", "Detail", "Media", new { id = customer.ID }, null)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", "Media", new { id = customer.ID }, null)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Delete", "DeleteCustomer", "Media", new { id = customer.ID }, null)
+                                </td>
+                            </tr>
                         }
-                    }
 
-                </tbody>
-            </table>
-        </div>
+                    </tbody>
+                </table>
+            </div>
+        }
+
         <div>
             @Html.ActionLink("New Customer", "NewCustomer")
         </div>
+        
     </div>
 
     @Html.Partial("_Footer")

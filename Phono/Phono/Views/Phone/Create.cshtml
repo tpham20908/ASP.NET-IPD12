@@ -66,7 +66,7 @@
             <div class="col-md-10">
                 @Html.DropDownListFor(
                m => m.Phone.PhoneTypeId,
-               new SelectList(Model.PhoneTypes, "Id", "Type", "OS"),
+               new SelectList(Model.PhoneTypes, "Id", "FullType"),
                "Select a type",
                new { @class="form-control"}
                )

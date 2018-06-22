@@ -20,13 +20,14 @@ namespace Phono.Models
         [Display(Name = "Sample")]
         public string ImageUrl { get; set; }
 
-        [Required]
         public Brand Brand { get; set; }
+        [Required]
         public byte BrandId { get; set; }
 
-        [Required]
+        
         [Display(Name = "Phone Type")]
         public PhoneType PhoneType { get; set; }
+        [Required]
         public byte PhoneTypeId { get; set; }
     }
 }

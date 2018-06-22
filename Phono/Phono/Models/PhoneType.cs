@@ -17,5 +17,13 @@ namespace Phono.Models
         [Required]
         [MaxLength(10)]
         public string OS { get; set; }
+
+        public string FullType
+        {
+            get
+            {
+                return Type + " " + OS;
+            }
+        }
     }
 }

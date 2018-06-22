@@ -42,9 +42,15 @@ namespace VidPlace.Controllers
         }
 
         // GET: Customer
-        public ActionResult Index()
+        public ActionResult Index(string SearchString)
         {
-            var customers = _context.Customers.Include(cust => cust.Membership).ToList();
+            var customers = _context.Customers.Include(cust => cust.Membership);
+
+            if (!string.IsNullOrWhiteSpace(SearchString))
+            {
+                customers = customers.Where(c => c.Name.Contains(SearchString));
+            }
+
             //var customers = GetCustomer();
             //var customers = new List<Customer>();
 
@@ -151,6 +157,31 @@ namespace VidPlace.Controllers
 
             return View(vm);
         }
+
+        public ActionResult DeleteCustomer(int? id)
+        {
+            var customer = _context.Customers
+                .Include(c => c.Membership)
+                .FirstOrDefault(c => c.ID == id);
+
+            if (customer == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(customer);
+        }
+
+        [HttpPost]
+        public ActionResult DeleteCustomer(int id)
+        {
+            var customer = _context.Customers.Find(id);
+            _context.Customers.Remove(customer);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
 
         /*
         public ActionResult getallmedia()
