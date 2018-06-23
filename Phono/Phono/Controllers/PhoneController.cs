@@ -75,7 +75,14 @@ namespace Phono.Controllers
             {
                 var phoneInDB = db.Phones.Single(p => p.Id == phone.Id);
 
-                TryUpdateModel(phoneInDB);
+                //TryUpdateModel(phoneInDB);
+
+                phoneInDB.PhoneName = phone.PhoneName;
+                phoneInDB.DateReleased = phone.DateReleased;
+                phoneInDB.ScreenSize = phone.ScreenSize;
+                phoneInDB.ImageUrl = phone.ImageUrl;
+                phoneInDB.BrandId = phone.BrandId;
+                phoneInDB.PhoneTypeId = phone.PhoneTypeId;
             }
 
             db.SaveChanges();

@@ -223,6 +223,18 @@
     <Compile Include="Migrations\201806210155592_AddMoreDisplayName2.Designer.cs">
       <DependentUpon>201806210155592_AddMoreDisplayName2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806222222473_AddRecordsToBrand.cs" />
+    <Compile Include="Migrations\201806222222473_AddRecordsToBrand.Designer.cs">
+      <DependentUpon>201806222222473_AddRecordsToBrand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806222228091_AddRecordsToPhoneTypes.cs" />
+    <Compile Include="Migrations\201806222228091_AddRecordsToPhoneTypes.Designer.cs">
+      <DependentUpon>201806222228091_AddRecordsToPhoneTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806222240272_AddRecordsToPhones.cs" />
+    <Compile Include="Migrations\201806222240272_AddRecordsToPhones.Designer.cs">
+      <DependentUpon>201806222240272_AddRecordsToPhones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Brand.cs" />
@@ -343,6 +355,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806210155592_AddMoreDisplayName2.resx">
       <DependentUpon>201806210155592_AddMoreDisplayName2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806222222473_AddRecordsToBrand.resx">
+      <DependentUpon>201806222222473_AddRecordsToBrand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806222228091_AddRecordsToPhoneTypes.resx">
+      <DependentUpon>201806222228091_AddRecordsToPhoneTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806222240272_AddRecordsToPhones.resx">
+      <DependentUpon>201806222240272_AddRecordsToPhones.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
