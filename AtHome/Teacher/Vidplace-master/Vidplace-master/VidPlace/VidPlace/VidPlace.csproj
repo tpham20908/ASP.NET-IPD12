@@ -9,17 +9,18 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{B98746EC-501F-49FE-9D95-EA8127FD5F7C}</ProjectGuid>
+    <ProjectGuid>{DAE85A4E-9179-49FA-A4E8-B2E9F17BE7D3}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Phono</RootNamespace>
-    <AssemblyName>Phono</AssemblyName>
+    <RootNamespace>VidPlace</RootNamespace>
+    <AssemblyName>VidPlace</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>
+    </IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -196,81 +197,120 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\BrandsController.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
+    <Compile Include="Controllers\HelloController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\PhoneController.cs" />
+    <Compile Include="Controllers\MediaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806210035365_InitialMigration.cs" />
-    <Compile Include="Migrations\201806210035365_InitialMigration.Designer.cs">
-      <DependentUpon>201806210035365_InitialMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201806191632251_IntialMigration.cs" />
+    <Compile Include="Migrations\201806191632251_IntialMigration.Designer.cs">
+      <DependentUpon>201806191632251_IntialMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806210044138_AddConstrainsToTables.cs" />
-    <Compile Include="Migrations\201806210044138_AddConstrainsToTables.Designer.cs">
-      <DependentUpon>201806210044138_AddConstrainsToTables.cs</DependentUpon>
+    <Compile Include="Migrations\201806191646217_AddIsSubsribedToNewLettertoCustomer.cs" />
+    <Compile Include="Migrations\201806191646217_AddIsSubsribedToNewLettertoCustomer.Designer.cs">
+      <DependentUpon>201806191646217_AddIsSubsribedToNewLettertoCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806210138458_AddDisplayNameAndImageUrl.cs" />
-    <Compile Include="Migrations\201806210138458_AddDisplayNameAndImageUrl.Designer.cs">
-      <DependentUpon>201806210138458_AddDisplayNameAndImageUrl.cs</DependentUpon>
+    <Compile Include="Migrations\201806191657014_AddMemeberShip.cs" />
+    <Compile Include="Migrations\201806191657014_AddMemeberShip.Designer.cs">
+      <DependentUpon>201806191657014_AddMemeberShip.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806210153366_AddMoreDisplayName.cs" />
-    <Compile Include="Migrations\201806210153366_AddMoreDisplayName.Designer.cs">
-      <DependentUpon>201806210153366_AddMoreDisplayName.cs</DependentUpon>
+    <Compile Include="Migrations\201806191708332_PopulateMembershipTypes.cs" />
+    <Compile Include="Migrations\201806191708332_PopulateMembershipTypes.Designer.cs">
+      <DependentUpon>201806191708332_PopulateMembershipTypes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806210155592_AddMoreDisplayName2.cs" />
-    <Compile Include="Migrations\201806210155592_AddMoreDisplayName2.Designer.cs">
-      <DependentUpon>201806210155592_AddMoreDisplayName2.cs</DependentUpon>
+    <Compile Include="Migrations\201806191736149_ApplyAnnotationsToCustomerClass.cs" />
+    <Compile Include="Migrations\201806191736149_ApplyAnnotationsToCustomerClass.Designer.cs">
+      <DependentUpon>201806191736149_ApplyAnnotationsToCustomerClass.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806222222473_AddRecordsToBrand.cs" />
-    <Compile Include="Migrations\201806222222473_AddRecordsToBrand.Designer.cs">
-      <DependentUpon>201806222222473_AddRecordsToBrand.cs</DependentUpon>
+    <Compile Include="Migrations\201806201329420_addNametoMembership.cs" />
+    <Compile Include="Migrations\201806201329420_addNametoMembership.Designer.cs">
+      <DependentUpon>201806201329420_addNametoMembership.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806222228091_AddRecordsToPhoneTypes.cs" />
-    <Compile Include="Migrations\201806222228091_AddRecordsToPhoneTypes.Designer.cs">
-      <DependentUpon>201806222228091_AddRecordsToPhoneTypes.cs</DependentUpon>
+    <Compile Include="Migrations\201806201330437_populateNameinMembership.cs" />
+    <Compile Include="Migrations\201806201330437_populateNameinMembership.Designer.cs">
+      <DependentUpon>201806201330437_populateNameinMembership.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201806222240272_AddRecordsToPhones.cs" />
-    <Compile Include="Migrations\201806222240272_AddRecordsToPhones.Designer.cs">
-      <DependentUpon>201806222240272_AddRecordsToPhones.cs</DependentUpon>
+    <Compile Include="Migrations\201806201356030_addBirthdateToCustomer.cs" />
+    <Compile Include="Migrations\201806201356030_addBirthdateToCustomer.Designer.cs">
+      <DependentUpon>201806201356030_addBirthdateToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806201433446_addMediaTable.cs" />
+    <Compile Include="Migrations\201806201433446_addMediaTable.Designer.cs">
+      <DependentUpon>201806201433446_addMediaTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806201507545_addMediaTypeGenra.cs" />
+    <Compile Include="Migrations\201806201507545_addMediaTypeGenra.Designer.cs">
+      <DependentUpon>201806201507545_addMediaTypeGenra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806201540154_addReleaseDate.cs" />
+    <Compile Include="Migrations\201806201540154_addReleaseDate.Designer.cs">
+      <DependentUpon>201806201540154_addReleaseDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806201543159_addGenretoMedia.cs" />
+    <Compile Include="Migrations\201806201543159_addGenretoMedia.Designer.cs">
+      <DependentUpon>201806201543159_addGenretoMedia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806201547086_addMediaTypetoMedia.cs" />
+    <Compile Include="Migrations\201806201547086_addMediaTypetoMedia.Designer.cs">
+      <DependentUpon>201806201547086_addMediaTypetoMedia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806201548509_populateGenraMedia.cs" />
+    <Compile Include="Migrations\201806201548509_populateGenraMedia.Designer.cs">
+      <DependentUpon>201806201548509_populateGenraMedia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806201557180_populateMediaTypes.cs" />
+    <Compile Include="Migrations\201806201557180_populateMediaTypes.Designer.cs">
+      <DependentUpon>201806201557180_populateMediaTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806201641230_updateMediaTable.cs" />
+    <Compile Include="Migrations\201806201641230_updateMediaTable.Designer.cs">
+      <DependentUpon>201806201641230_updateMediaTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806201727350_updateCustomerAddress.cs" />
+    <Compile Include="Migrations\201806201727350_updateCustomerAddress.Designer.cs">
+      <DependentUpon>201806201727350_updateCustomerAddress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806221545039_seedingBuiltInAccounts.cs" />
+    <Compile Include="Migrations\201806221545039_seedingBuiltInAccounts.Designer.cs">
+      <DependentUpon>201806221545039_seedingBuiltInAccounts.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Brand.cs" />
-    <Compile Include="Models\CreatePhoneVM.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Phone.cs" />
-    <Compile Include="Models\PhoneType.cs" />
+    <Compile Include="Models\Media.cs" />
+    <Compile Include="Models\MediaType.cs" />
+    <Compile Include="Models\Membership.cs" />
+    <Compile Include="Models\Min18YearsIfMember.cs" />
+    <Compile Include="Models\RoleNames.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\CustomerFormViewModel.cs" />
+    <Compile Include="ViewModels\RentalsMediaViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-flatly.css" />
+    <Content Include="Content\bootstrap-simplex.css" />
+    <Content Include="Content\bootstrap-Spacelab.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap-Yeti.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\bootstrapslate.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Images\iphone3g.png" />
-    <Content Include="Images\iphone5c.png" />
-    <Content Include="Images\iphone8.jpg" />
-    <Content Include="Images\iphone8.png" />
-    <Content Include="Images\lenovok6note.png" />
-    <Content Include="Images\lenovok8plus.png" />
-    <Content Include="Images\lenovop2.png" />
-    <Content Include="Images\novaplus.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Properties\PublishProfiles\phono - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\phono - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -315,17 +355,20 @@
     <Content Include="Views\Manage\SetPassword.cshtml" />
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
-    <Content Include="Views\Brands\Create.cshtml" />
-    <Content Include="Views\Brands\Delete.cshtml" />
-    <Content Include="Views\Brands\Details.cshtml" />
-    <Content Include="Views\Brands\Edit.cshtml" />
-    <Content Include="Views\Brands\Index.cshtml" />
-    <Content Include="Views\Phone\Create.cshtml" />
-    <Content Include="Views\Phone\Delete.cshtml" />
-    <Content Include="Views\Phone\Details.cshtml" />
-    <Content Include="Views\Phone\Index.cshtml" />
-    <Content Include="Views\Brands\AvailablePhones.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Hello\Index.cshtml" />
+    <Content Include="Views\Hello\HelloWorld.cshtml" />
+    <Content Include="Views\Media\random.cshtml" />
+    <Content Include="Views\Hello\getCustomer.cshtml" />
+    <Content Include="Views\Media\rentals.cshtml" />
+    <Content Include="Views\Shared\_NavBar.cshtml" />
+    <Content Include="Views\Customers\List.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Media\Index.cshtml" />
+    <Content Include="Views\Media\Details.cshtml" />
+    <Content Include="Views\Customers\CustomerForm.cshtml" />
+    <Content Include="Views\Customers\Delete.cshtml" />
+    <Content Include="Views\Customers\ReadOnlyList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -344,29 +387,59 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201806210035365_InitialMigration.resx">
-      <DependentUpon>201806210035365_InitialMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806191632251_IntialMigration.resx">
+      <DependentUpon>201806191632251_IntialMigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806210044138_AddConstrainsToTables.resx">
-      <DependentUpon>201806210044138_AddConstrainsToTables.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806191646217_AddIsSubsribedToNewLettertoCustomer.resx">
+      <DependentUpon>201806191646217_AddIsSubsribedToNewLettertoCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806210138458_AddDisplayNameAndImageUrl.resx">
-      <DependentUpon>201806210138458_AddDisplayNameAndImageUrl.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806191657014_AddMemeberShip.resx">
+      <DependentUpon>201806191657014_AddMemeberShip.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806210153366_AddMoreDisplayName.resx">
-      <DependentUpon>201806210153366_AddMoreDisplayName.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806191708332_PopulateMembershipTypes.resx">
+      <DependentUpon>201806191708332_PopulateMembershipTypes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806210155592_AddMoreDisplayName2.resx">
-      <DependentUpon>201806210155592_AddMoreDisplayName2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806191736149_ApplyAnnotationsToCustomerClass.resx">
+      <DependentUpon>201806191736149_ApplyAnnotationsToCustomerClass.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806222222473_AddRecordsToBrand.resx">
-      <DependentUpon>201806222222473_AddRecordsToBrand.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806201329420_addNametoMembership.resx">
+      <DependentUpon>201806201329420_addNametoMembership.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806222228091_AddRecordsToPhoneTypes.resx">
-      <DependentUpon>201806222228091_AddRecordsToPhoneTypes.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806201330437_populateNameinMembership.resx">
+      <DependentUpon>201806201330437_populateNameinMembership.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806222240272_AddRecordsToPhones.resx">
-      <DependentUpon>201806222240272_AddRecordsToPhones.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806201356030_addBirthdateToCustomer.resx">
+      <DependentUpon>201806201356030_addBirthdateToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806201433446_addMediaTable.resx">
+      <DependentUpon>201806201433446_addMediaTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806201507545_addMediaTypeGenra.resx">
+      <DependentUpon>201806201507545_addMediaTypeGenra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806201540154_addReleaseDate.resx">
+      <DependentUpon>201806201540154_addReleaseDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806201543159_addGenretoMedia.resx">
+      <DependentUpon>201806201543159_addGenretoMedia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806201547086_addMediaTypetoMedia.resx">
+      <DependentUpon>201806201547086_addMediaTypetoMedia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806201548509_populateGenraMedia.resx">
+      <DependentUpon>201806201548509_populateGenraMedia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806201557180_populateMediaTypes.resx">
+      <DependentUpon>201806201557180_populateMediaTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806201641230_updateMediaTable.resx">
+      <DependentUpon>201806201641230_updateMediaTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806201727350_updateCustomerAddress.resx">
+      <DependentUpon>201806201727350_updateCustomerAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806221545039_seedingBuiltInAccounts.resx">
+      <DependentUpon>201806221545039_seedingBuiltInAccounts.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -385,9 +458,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>62799</DevelopmentServerPort>
+          <DevelopmentServerPort>59294</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:62799/</IISUrl>
+          <IISUrl>http://localhost:59294/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

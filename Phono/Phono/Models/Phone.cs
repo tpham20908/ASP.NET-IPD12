@@ -17,7 +17,7 @@ namespace Phono.Models
         public DateTime DateReleased { get; set; }
         [Display(Name = "Screen Size")]
         public decimal? ScreenSize { get; set; }
-        [Display(Name = "Sample")]
+        [Display(Name = "Image Url")]
         public string ImageUrl { get; set; }
 
         public Brand Brand { get; set; }

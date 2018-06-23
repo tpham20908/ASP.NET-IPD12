@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace Phono
+namespace VidPlace
 {
     public class BundleConfig
     {
@@ -20,10 +20,10 @@ namespace Phono
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrapslate.js"));
+                      "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrapslate.css",
+                      "~/Content/bootstrap-Spacelab.css",
                       "~/Content/site.css"));
         }
     }
