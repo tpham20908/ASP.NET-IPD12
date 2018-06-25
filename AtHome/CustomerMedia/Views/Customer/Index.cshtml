@@ -5,6 +5,16 @@
 
 <h2>Customers</h2>
 
+@Html.ActionLink("Create New Customer", "New", "Customer", new { @class = "mb-3" })
+<div>
+    @using (Html.BeginForm("Index", "Customer", FormMethod.Get))
+    {
+
+        @Html.TextBox("SearchString")
+        <input type="submit" value="Search" class="btn btn-default" />
+    }
+</div>
+
 <table class="table table-bordered table-hover">
     <thead>
         <tr>
@@ -13,6 +23,7 @@
             <th>Address</th>
             <th>Subcribed</th>
             <th>Membership Type</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -20,10 +31,15 @@
         {
             <tr>
                 <td>@customer.Name</td>
-                <td>@customer.Birthdate.ToShortDateString()</td>
+                <td>@customer.Birthdate.Value.ToShortDateString()</td>
                 <td>@customer.Address</td>
                 <td>@customer.IsSubscribedToNewsLetter</td>
                 <td>@customer.Membership.Name</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", "Customer", new { id = customer.Id }, null) |
+                    @Html.ActionLink("Details", "Details", "Customer", new { id = customer.Id }, null) |
+                    @Html.ActionLink("Delete", "Delete", "Customer", new { id = customer.Id }, null)
+                </td>
             </tr>
         }
 
