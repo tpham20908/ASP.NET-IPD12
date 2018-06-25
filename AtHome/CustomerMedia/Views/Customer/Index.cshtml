@@ -9,6 +9,8 @@
     <thead>
         <tr>
             <th>Name</th>
+            <th>Birthdate</th>
+            <th>Address</th>
             <th>Subcribed</th>
             <th>Membership Type</th>
         </tr>
@@ -18,6 +20,8 @@
         {
             <tr>
                 <td>@customer.Name</td>
+                <td>@customer.Birthdate.ToShortDateString()</td>
+                <td>@customer.Address</td>
                 <td>@customer.IsSubscribedToNewsLetter</td>
                 <td>@customer.Membership.Name</td>
             </tr>

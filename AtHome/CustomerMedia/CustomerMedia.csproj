@@ -238,6 +238,14 @@
     <Compile Include="Migrations\201806251845596_PopulateBirthdateInCustomers.Designer.cs">
       <DependentUpon>201806251845596_PopulateBirthdateInCustomers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806251851579_AddAddressInCustomer.cs" />
+    <Compile Include="Migrations\201806251851579_AddAddressInCustomer.Designer.cs">
+      <DependentUpon>201806251851579_AddAddressInCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806251852206_PopulateAddressInCustomers.cs" />
+    <Compile Include="Migrations\201806251852206_PopulateAddressInCustomers.Designer.cs">
+      <DependentUpon>201806251852206_PopulateAddressInCustomers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -246,6 +254,7 @@
     <Compile Include="Models\Membership.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\CustomerFormVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -307,6 +316,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Customer\Index.cshtml" />
+    <Content Include="Views\Customer\CustomerForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -351,6 +361,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806251845596_PopulateBirthdateInCustomers.resx">
       <DependentUpon>201806251845596_PopulateBirthdateInCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806251851579_AddAddressInCustomer.resx">
+      <DependentUpon>201806251851579_AddAddressInCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806251852206_PopulateAddressInCustomers.resx">
+      <DependentUpon>201806251852206_PopulateAddressInCustomers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
