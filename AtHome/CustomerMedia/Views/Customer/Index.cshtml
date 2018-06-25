@@ -1,0 +1,27 @@
+﻿@model IEnumerable<CustomerMedia.Models.Customer>
+@{
+    ViewBag.Title = "Customers";
+}
+
+<h2>Customers</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Subcribed</th>
+            <th>Membership Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model)
+        {
+            <tr>
+                <td>@customer.Name</td>
+                <td>@customer.IsSubscribedToNewsLetter</td>
+                <td>@customer.Membership.Name</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
